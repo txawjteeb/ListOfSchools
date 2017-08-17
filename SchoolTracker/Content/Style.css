@@ -1,0 +1,12 @@
+﻿#Select1 {
+    color: white;
+    background-color: black;
+}
+body {
+    /*background-image: url("/Images/main.PNG");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.jumbotron {
+    margin-top: 200px;
+}

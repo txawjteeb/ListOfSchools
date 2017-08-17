@@ -1,0 +1,104 @@
+// RAAN Charts 
+// 
+// Chart design as used in new web and hybrid apps
+
+// Highcharts modifications
+// 
+.highcharts-grid {
+	path {
+
+		&:nth-child(2) {
+			stroke: $roar-2;
+			stroke-width: 3;
+		}
+
+		&:nth-child(3) {
+			stroke: $roar-3;
+			stroke-width: 3;
+		}
+
+		&:nth-child(4) {
+			stroke: $roar-4;
+			stroke-width: 3;
+		}
+
+		&:nth-child(5) {
+			stroke: $roar-5;
+			stroke-width: 3;
+		}
+
+	}
+}
+
+// xAxis base
+// 
+.highcharts-axis {
+	path {
+		&:last-child {
+			stroke: $roar-1;
+			stroke-width: 3;
+			fill: $roar-1;
+		}
+	}
+}
+
+//  yAxis Labels
+// 
+.highcharts-yaxis-labels {
+	text {
+		&:nth-child(1) {
+			font-weight: 700;
+		}
+
+		&:nth-child(2) {
+			font-weight: 700;
+		}
+
+		&:nth-child(3) {
+			font-weight: 700;
+		}
+
+		&:nth-child(4) {
+			font-weight: 700;
+		}
+
+		&:nth-child(5) {
+			font-weight: 700;
+		}
+	}
+}
+
+// xAxis Labels
+// 
+.highcharts-xaxis-labels {
+	text { font-weight: 700; }
+}
+
+//  yAxis Roar Labels
+// 
+.scale-1 {
+	background: url(../img/raan/scale-1.png) no-repeat;
+	height: 21px;
+	width: 21px;
+	display: block;
+}
+
+.scale-2 {
+	@extend .scale-1;
+	background: url(../img/raan/scale-2.png) no-repeat;
+}
+
+.scale-3 {
+	@extend .scale-1;
+	background: url(../img/raan/scale-3.png) no-repeat;
+}
+
+.scale-4 {
+	@extend .scale-1;
+	background: url(../img/raan/scale-4.png) no-repeat;
+}
+
+.scale-5 {
+	@extend .scale-1;
+	background: url(../img/raan/scale-5.png) no-repeat;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "o3-library",
+  "version": "1.0.5",
+  "description": "SJVAPCD css library",
+  "main": "dist/library.min.css",
+  "author": {
+    "name": "Anton Simanov"
+  },
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-csso": "^3.0.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "~1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-util": "^3.0.7"
+  }
+}

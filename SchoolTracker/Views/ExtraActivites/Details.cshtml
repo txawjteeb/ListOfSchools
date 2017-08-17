@@ -1,0 +1,58 @@
+﻿@model SchoolTracker.Models.ExtraActivites
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ExtraActivites</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CalendarProgram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalendarProgram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoContest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoContest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SportsOutreach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SportsOutreach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Workshops)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Workshops)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScienceDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScienceDays)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

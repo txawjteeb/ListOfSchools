@@ -1,0 +1,88 @@
+﻿@model SchoolTracker.Models.RAANNotification
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RAANNotification</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolOffice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistrictOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistrictOffice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teachers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teachers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AthleticDirector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AthleticDirector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Widget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Widget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SmartPhoneApp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SmartPhoneApp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.READ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.READ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlagRelying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlagRelying)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

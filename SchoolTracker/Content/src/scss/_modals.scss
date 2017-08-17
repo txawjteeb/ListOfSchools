@@ -1,0 +1,231 @@
+// _modals.scss
+
+// Prep moving parts
+// 
+.chart-header, .chart-content { 
+	@include transition(all, 0.2s, ease-in-out); 
+}
+
+main {
+  @include transition(all, 0.05s, ease-in-out);
+}
+
+// On load this class remains
+// 
+.raan-load {
+
+	// Chart Header
+	// 
+	.chart-header {
+		padding: 10em 0;
+    display: block;
+
+    @include break-point-max(medium) {
+      padding: 1em 1em 6em 1em;
+    }
+	}
+
+	// Main chart area below the header
+	// 
+  .main-chart {
+    padding-top: 0;
+  }
+
+	.chart-content {
+		filter: grayscale(0.7) blur(3px);
+		opacity: 0.5;
+
+		// Hide quick-view table contents
+		// 
+		.quick-view {
+			color: transparent !important;
+		}
+		
+	}
+  
+  // Footer ribbon and footer
+  // 
+  .footer-ribbon, footer {
+    filter: grayscale(0.7) blur(3px);
+    opacity: 0.5;
+  }
+
+  // RAAN header nav
+  // 
+  .header {
+    opacity: 0;
+    top: -50px;
+  }
+
+}
+
+// Add "overlay" to main on address and date input focus
+// 
+.raan-message {
+
+  .chart-content {
+    filter: grayscale(0.7) blur(3px);
+    opacity: 0.5;
+
+    // Hide quick-view table contents
+    // 
+    .quick-view {
+      color: transparent !important;
+    }
+    
+  }
+  
+  main {
+    position: relative;
+
+    &::after {
+      content: "Please select an address";
+      position: absolute;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: "Fjalla One";
+      font-size: 3em;
+      line-height: 1.5em;
+      color: $brand-primary;
+      top: 25%; bottom: 0; left: 0; right: 0;
+      @include transition(all, 0.2s, ease-in-out);
+    }
+  } 
+}
+
+// Chart Header - mini header nav
+//
+.raan-ready { 
+  .chart-header--nav {
+    padding: 33px 0 0 !important;
+    // background: rgba(0,0,0,0.1);
+    // background: url(http://www.valleyair.org/assets/img/hero-img-aqi-alt.jpg) center center no-repeat;
+
+    .container {
+      padding-bottom: 0.25em;
+    }
+    
+    &__content {
+      width: 10%;
+      float: left;
+      padding: 0 !important;
+    }
+
+    &__intro-text {
+      display: none;
+    }
+
+    &__logo {
+      text-align: inherit;
+
+      .main-logo {
+        width: 65px;
+      }
+    }
+
+    &__controls {
+      width: 90%;
+      float: left;
+    }
+  }
+}
+
+// Global element modifications
+// 
+.blur {
+  filter: grayscale(0.7) blur(3px);  
+}
+
+// Modal
+// 
+$unit: 1.125em;
+
+// Main modal box
+//
+.modal {
+  position: fixed;
+  z-index: 400; // modals live in level 2
+  top: 0; bottom: 0; left: 0; right: 0;
+  // height: 100%;
+  background: rgba(0, 0, 0, .85);
+  
+  visibility: hidden; // is shown with js
+  opacity: 0; // is shown with js
+  
+  @include transition(all, 0.2s, ease-in-out);
+  // top: -50%;
+
+  // visibility: visible; 
+  // opacity: 1; 
+}
+
+// Show .modal
+//
+.display-none { display: none !important; } // add this class when "toggling" between two views
+.display-block { display: block !important; } // add this class to #modal
+
+.visibility-visible { 
+	visibility: visible; 
+	opacity: 1; 
+}
+
+// The content within the modal
+//
+.modal__container {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: table;
+  height: 100%;
+  padding: 1*$unit;
+
+  // max-width: 200px;
+  width: 100%;
+  // margin: 0 auto;
+}
+
+// modal body
+//
+.modal__body {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+
+  p {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: white;
+  }
+
+  i {
+  	font-size: 1.25em;
+  	margin-bottom: 0;
+  	padding-right: 0.5em;
+    color: white;
+  }
+}
+
+// The close button
+//
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: .33*$unit .33*$unit 0 0;
+  font-size: 3em;
+  border: none;
+  background: none;
+  display: block;
+  &:hover, &:focus {
+    outline: none;
+    border: none;
+    opacity: .85;
+  }
+  &:active {
+    opacity: .6;
+  }
+
+}

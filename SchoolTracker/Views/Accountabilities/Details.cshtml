@@ -1,0 +1,66 @@
+﻿@model SchoolTracker.Models.Accountability
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Accountability</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OCStaffAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OCStaffAssigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffLastContacted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffLastContacted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadActiveOrNot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadActiveOrNot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdleSignOrNot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdleSignOrNot)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

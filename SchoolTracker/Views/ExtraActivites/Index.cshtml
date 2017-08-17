@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SchoolTracker.Models.ExtraActivites>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CalendarProgram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VideoContest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SportsOutreach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Workshops)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScienceDays)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalendarProgram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VideoContest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SportsOutreach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Workshops)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScienceDays)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

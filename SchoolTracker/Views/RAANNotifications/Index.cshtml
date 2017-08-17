@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SchoolTracker.Models.RAANNotification>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolOffice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistrictOffice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teachers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AthleticDirector)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Widget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmartPhoneApp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.READ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlagRelying)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolOffice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistrictOffice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teachers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AthleticDirector)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Widget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmartPhoneApp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.READ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlagRelying)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

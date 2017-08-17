@@ -1,0 +1,94 @@
+// Local fonts for hybrid apps
+// 
+// For Hybrid Apps that run natively use included fonts from the library
+// 
+// @font-face {
+//   font-family: 'MyWebFont';
+//   src: url(webfont.eot); // IE9 Compat Modes 
+//   src: url(webfont.eot?#iefix) format('embedded-opentype'), // IE6-IE8 
+//        url(webfont.woff2) format('woff2'), // Super Modern Browsers
+//        url(webfont.woff) format('woff'), // Pretty Modern Browsers 
+//        url(webfont.ttf)  format('truetype'), // Safari, Android, iOS 
+//        url(webfont.svg#svgFontName) format('svg'); // Legacy iOS 
+// }
+// 
+// latin-ext
+@font-face {
+  font-family: 'Fjalla One';
+  font-style: normal;
+  font-weight: 400;
+  src:  local('Fjalla One'), local('FjallaOne-Regular'), 
+        url(../src/fonts/Fjalla_One/FjallaOne-Regular-ext.woff2) format('woff2'),
+        url(../src/fonts/Fjalla_One/FjallaOne-Regular.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+// latin
+@font-face {
+  font-family: 'Fjalla One';
+  font-style: normal;
+  font-weight: 400;
+  src:  local('Fjalla One'), local('FjallaOne-Regular'), 
+        url(../src/fonts/Fjalla_One/FjallaOne-Regular.woff2) format('woff2'),
+        url(../src/fonts/Fjalla_One/FjallaOne-Regular.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+// latin-ext
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), 
+       url(../src/fonts/Lato/Lato-Light-ext.woff2) format('woff2'),
+       url(../src/fonts/Lato/Lato-Light.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+// latin
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), 
+       url(../src/fonts/Lato/Lato-Light.woff2) format('woff2'),
+       url(../src/fonts/Lato/Lato-Light.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+// latin-ext
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), 
+       url(../src/fonts/Lato/Lato-Regular-ext.woff2) format('woff2'),
+       url(../src/fonts/Lato/Lato-Regular.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+// latin
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), 
+       url(../src/fonts/Lato/Lato-Regular.woff2) format('woff2'),
+       url(../src/fonts/Lato/Lato-Regular.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+// latin-ext
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), 
+       url(../src/fonts/Lato/Lato-Bold-ext.woff2) format('woff2'),
+       url(../src/fonts/Lato/Lato-Bold.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+// latin
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), 
+       url(../src/fonts/Lato/Lato-Bold.woff2) format('woff2'),
+       url(../src/fonts/Lato/Lato-Bold.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}

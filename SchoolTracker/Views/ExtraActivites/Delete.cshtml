@@ -1,0 +1,64 @@
+﻿@model SchoolTracker.Models.ExtraActivites
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ExtraActivites</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CalendarProgram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalendarProgram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoContest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoContest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SportsOutreach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SportsOutreach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Workshops)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Workshops)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScienceDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScienceDays)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

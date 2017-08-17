@@ -1,0 +1,611 @@
+/**
+ *  FLEX ALIGNMENTS
+ */
+
+// container
+.aligner {
+  display: flex;
+}
+
+.aligner-space-between {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.aligner-space-around {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.aligner-center-vertical {
+  align-items: center;
+  display: flex;
+}
+
+.aligner-center-horitzontal {
+  display: flex;
+  justify-content: center;
+}
+
+.content-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// item
+.aligner-item-top {
+  align-self: flex-start;
+}
+
+.aligner-item-bottom {
+  align-self: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+
+/**
+ *  ALIGNMENTS
+ */
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.cf {
+  @include clearfix();
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+
+.align-bottom {
+  vertical-align: bottom;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-top {
+  vertical-align: top;
+}
+
+
+/**
+ *  TEXT UTILITIES
+ */
+
+.ellipsis {
+  @include ellipsis();
+}
+
+.ellipsis-block {
+  @include ellipsis();
+  display: block;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.text-indent {
+  padding-left: $gutterwidth;
+}
+
+
+/**
+ *  MODIFIERS
+ */
+
+// Borders
+// 
+// .bordered {
+//   border: 1px solid $border-color;
+// }
+
+// .border-bottom {
+//   border-bottom: 1px solid $border-color;
+// }
+
+// .border-left {
+//   border-left: 1px solid $border-color;
+// }
+
+// .border-right {
+//   border-right: 1px solid $border-color;
+// }
+
+// .border-top {
+//   border-top: 1px solid $border-color;
+// }
+
+.border {
+
+  &--bottom {
+    border-bottom: 1px solid $border-color !important;
+  }
+
+  &--top {
+    border-top: 1px solid $border-color !important;
+  }
+
+  &--left {
+    border-left: 1px solid $border-color !important;
+  }
+
+  &--right {
+    border-right: 1px solid $border-color !important;
+  }
+
+  &--all {
+    border: 1px solid $border-color !important;
+  }
+
+  &--none {
+    border: none !important;
+  }
+}
+
+.display-block {
+  display: block;
+}
+
+.block-mobile {
+  @include breakpoint(bp-small, max-width) {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; // useful for buttons
+  }
+}
+
+.display-inline {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-margin {
+  margin: 0!important;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.opacity-low {
+  opacity: .5;
+}
+
+
+// deprecated ".icon-rounded". Use rounded-corners instead.
+.icon-rounded,
+.rounded-corners {
+  border-radius: 15%;
+}
+
+.rounded {
+  border-radius: 100%;
+}
+
+
+/**
+ *  VISIBILITY UTILITIES
+ */
+
+.hidden-large {
+
+  @include breakpoint(bp-large) {
+    display: none;
+  }
+
+  @include breakpoint(bp-huge) {
+    display: inline-block;
+  }
+}
+
+.hidden-medium {
+
+  @include breakpoint(bp-medium) {
+    display: none;
+  }
+
+  @include breakpoint(bp-large) {
+    display: inline-block;
+  }
+}
+
+.show-small {
+  @include breakpoint(bp-medium) {
+    display: none;
+  }
+}
+
+.hide-small {
+  display: none;
+
+  @include breakpoint(bp-medium) {
+    display: block;
+  }
+}
+
+.hide-small-inline-block {
+  display: none!important;
+
+  @include breakpoint(bp-medium) {
+    display: inline-block!important;
+  }
+}
+
+.hide-medium {
+  display: block;
+
+  @include breakpoint(bp-medium) {
+    display: none;
+  }
+
+  @include breakpoint(bp-large) {
+    display: block;
+  }
+}
+
+/**
+ *  BOOTSTRAP VISIBILITY UTILITIES
+ *  Note: Deprecated .visible-xs, .visible-sm, .visible-md, and .visible-lg as of v3.2.0
+ */
+
+@include responsive-invisibility('.visible-xs');
+@include responsive-invisibility('.visible-sm');
+@include responsive-invisibility('.visible-md');
+@include responsive-invisibility('.visible-lg');
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-visibility('.visible-xs');
+}
+
+.visible-xs-block {
+  @media (max-width: $screen-xs-max) {
+    display: block !important;
+  }
+}
+
+.visible-xs-inline {
+  @media (max-width: $screen-xs-max) {
+    display: inline !important;
+  }
+}
+
+.visible-xs-inline-block {
+  @media (max-width: $screen-xs-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-visibility('.visible-sm');
+}
+
+.visible-sm-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: block !important;
+  }
+}
+
+.visible-sm-inline {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline !important;
+  }
+}
+
+.visible-sm-inline-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-visibility('.visible-md');
+}
+
+.visible-md-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: block !important;
+  }
+}
+
+.visible-md-inline {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline !important;
+  }
+}
+
+.visible-md-inline-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-visibility('.visible-lg');
+}
+
+.visible-lg-block {
+  @media (min-width: $screen-lg-min) {
+    display: block !important;
+  }
+}
+
+.visible-lg-inline {
+  @media (min-width: $screen-lg-min) {
+    display: inline !important;
+  }
+}
+
+.visible-lg-inline-block {
+  @media (min-width: $screen-lg-min) {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-invisibility('.hidden-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-invisibility('.hidden-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-invisibility('.hidden-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-invisibility('.hidden-lg');
+}
+
+
+// Custom Margin Sizes
+//
+$margin-sizes: 10; 
+// 
+// Margin ALL
+@for $i from 1 through $margin-sizes {     
+    .margin-#{$i} {        
+        margin: 10em / $margin-sizes * $i !important;  
+    }          
+}
+// Margin Bottom
+@for $i from 1 through $margin-sizes {     
+    .margin-bottom-#{$i} {        
+        margin-bottom: 10em / $margin-sizes * $i !important;  
+    }          
+}
+// Margin Top
+@for $i from 1 through $margin-sizes {     
+    .margin-top-#{$i} {        
+        margin-top: 10em / $margin-sizes * $i !important;  
+    }          
+}
+// Margin Right
+@for $i from 1 through $margin-sizes {     
+    .margin-right-#{$i} {        
+        margin-right: 10em / $margin-sizes * $i !important;  
+    }          
+}
+// Margin Left
+@for $i from 1 through $margin-sizes {     
+    .margin-left-#{$i} {        
+        margin-left: 10em / $margin-sizes * $i !important;  
+    }          
+}
+// All Margins - straight up gangsta!
+@for $i from 1 through $margin-sizes {     
+    .margin-#{$i} {        
+        margin-left: 10em / $margin-sizes * $i !important;  
+    }          
+}
+
+    // In REM unit
+    // 
+    // Margin ALL 
+    @for $i from 1 through $margin-sizes {     
+        .margin-rem-#{$i} {        
+            margin: 10rem / $margin-sizes * $i;  
+        }          
+    }
+    // Margin Bottom 
+    @for $i from 1 through $margin-sizes {     
+        .margin-bottom-rem-#{$i} {        
+            margin-bottom: 10rem / $margin-sizes * $i;  
+        }          
+    }
+    // Margin Top
+    @for $i from 1 through $margin-sizes {     
+        .margin-top-rem-#{$i} {        
+            margin-top: 10rem / $margin-sizes * $i;  
+        }          
+    }
+    // Margin Right
+    @for $i from 1 through $margin-sizes {     
+        .margin-right-rem-#{$i} {        
+            margin-right: 10rem / $margin-sizes * $i;  
+        }          
+    }
+    // Margin Left
+    @for $i from 1 through $margin-sizes {     
+        .margin-left-rem-#{$i} {        
+            margin-left: 10rem / $margin-sizes * $i;  
+        }          
+    }
+    // All Margins
+    @for $i from 1 through $margin-sizes {     
+        .margin-rem-#{$i} {        
+            margin-left: 10rem / $margin-sizes * $i;  
+        }          
+    }
+
+// Custom Padding Sizes
+//
+$padding-sizes: 10; 
+// 
+// Padding ALL
+@for $i from 1 through $padding-sizes {     
+    .padding-#{$i} {        
+        padding: 10em / $padding-sizes * $i;  
+    }          
+}
+// Padding Bottom
+@for $i from 1 through $padding-sizes {     
+    .padding-bottom-#{$i} {        
+        padding-bottom: 10em / $padding-sizes * $i;  
+    }          
+}
+// Padding Top
+@for $i from 1 through $padding-sizes {     
+    .padding-top-#{$i} {        
+        padding-top: 10em / $padding-sizes * $i;  
+    }          
+}
+// Padding Right
+@for $i from 1 through $padding-sizes {     
+    .padding-right-#{$i} {        
+        padding-right: 10em / $padding-sizes * $i;  
+    }          
+}
+// Padding Left
+@for $i from 1 through $padding-sizes {     
+    .padding-left-#{$i} {        
+        padding-left: 10em / $padding-sizes * $i;  
+    }          
+}
+// All Padding
+@for $i from 1 through $padding-sizes {     
+    .padding-#{$i} {        
+        padding-left: 10em / $padding-sizes * $i;  
+    }          
+}
+
+    // In REM unit
+    //
+    // Padding ALL
+    @for $i from 1 through $padding-sizes {     
+        .padding-rem-#{$i} {        
+            padding: 10rem / $padding-sizes * $i;  
+        }          
+    }
+    // Padding Bottom
+    @for $i from 1 through $padding-sizes {     
+        .padding-bottom-rem-#{$i} {        
+            padding-bottom: 10rem / $padding-sizes * $i;  
+        }          
+    }
+    // Padding Top
+    @for $i from 1 through $padding-sizes {     
+        .padding-top-rem-#{$i} {        
+            padding-top: 10rem / $padding-sizes * $i;  
+        }          
+    }
+    // Padding Right
+    @for $i from 1 through $padding-sizes {     
+        .padding-right-rem-#{$i} {        
+            padding-right: 10rem / $padding-sizes * $i;  
+        }          
+    }
+    // Padding Left
+    @for $i from 1 through $padding-sizes {     
+        .padding-left-rem-#{$i} {        
+            padding-left: 10rem / $padding-sizes * $i;  
+        }          
+    }
+    // All Padding
+    @for $i from 1 through $padding-sizes {     
+        .padding-rem-#{$i} {        
+            padding-left: 10rem / $padding-sizes * $i;  
+        }          
+    }
+
+// Margin and padding 
+// 
+.no-margin { margin: 0 !important; } 
+.no-padding { padding: 0 !important; }   
+
+// Position and Display Fix
+// 
+.fixed { position: fixed; top: 0; }
+.display-block { display: block; }
+.display-inline { display: inline-block; }
+
+// Center Stuff
+// 
+.center { margin: 0 auto; }
+.center-text { text-align: center; }
+
+// Content wrap sizes
+//
+// Deprecated because of unnecesarry bloat
+// 
+// $width-sizes: 1200; 
+// 
+// Max-width
+// @for $i from 1 through $width-sizes {     
+//     .wrap-#{$i} {        
+//         max-width: 1200px / $width-sizes * $i;
+//         height: auto;
+//         margin: 0 auto;  
+//     }          
+// }
+
+// Box shadow
+// 
+.boxshadow {
+  &--bottom {
+    @include box-shadow (0 8px 8px -8px rgba(0,0,0,0.1));
+  }
+}
+
+// Option Definitions
+//
+.inline-wrap { width: 100%; display: inline-block; }

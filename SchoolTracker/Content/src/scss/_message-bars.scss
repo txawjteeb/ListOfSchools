@@ -1,0 +1,109 @@
+/**
+ *  MESSAGE BARS
+ *
+ *  Markup:
+ *  -------
+ *
+ *  <div class="message message--sucess">Success message</div>
+ *  <div class="message message--info">Success info</div>
+ *  <div class="message message--error">Success error</div>
+ *  <div class="message message--warning">Success warning</div>
+ *
+ */
+
+.message {
+  border-radius: $radius;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-weight: 700;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &--success {
+  	background: $color-success;
+  }
+
+  &--info {
+  	background: $color-info;
+  }
+
+  &--warning {
+  	background: $color-warning;
+  }
+
+  &--error {
+  	background: $color-error;
+  }
+}
+
+// Basic Note
+// 
+.note {
+	background: color("yellow" , "tint");
+	color: color("yellow" , "shade");
+	border: 1px solid color("yellow" , "bright");
+	@include borderRadius(4px);
+	padding: 1em;
+	margin: 1em 0;
+
+	&:before {
+		content: "\F007"; // btr bt-comment
+		font-family: "Black Tie";
+		margin-right: 1em;
+		color: color("yellow" , "shade");
+		text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+		font-weight: 900;
+	}
+	
+	// Caution Note
+	&--caution {
+		background: color("red");
+		border-color: color("red" , "shade");
+		color: white;
+
+		&:before { 
+			content: "\f062"; // fa-exclamation-triangle
+			font-family: 'Black Tie';
+			margin-right: 1em;
+			color: white;
+			font-weight: 900;
+		}
+
+		// &__black {
+		// 	background: black;
+		// 	color: white;
+		// }
+	}
+	
+	// Success Note
+	&--success {
+		background: color("green");
+		border-color: color("green" , "shade");
+		color: white;
+
+		&:before { 
+			content: "\F026"; // fa-thumbs-up
+			font-family: 'Black Tie';
+			margin-right: 1em;
+			color: white;
+			font-weight: 900;
+		}
+	}
+
+	// Information Note
+	&--information {
+		background: color("blue");
+		border-color: color("blue" , "shade");
+		color: white;
+
+		&:before { 
+			content: "\F02B"; // fa-info-circle
+			font-family: 'Black Tie';
+			margin-right: 1em;
+			color: white;
+			font-weight: 900;
+		}
+	}
+}

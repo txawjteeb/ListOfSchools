@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07043680-3661-4A2A-BFF8-90DA85A49561}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolTracker</RootNamespace>
+    <AssemblyName>SchoolTracker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CleanAirChampionsController.cs" />
+    <Compile Include="Controllers\CommunicationToolsController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\ExtraActivitesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MaterialsController.cs" />
+    <Compile Include="Controllers\MeetingTrackersController.cs" />
+    <Compile Include="Controllers\MeetingTypesController.cs" />
+    <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Controllers\ParentsCommunicationsController.cs" />
+    <Compile Include="Controllers\RAANNotificationsController.cs" />
+    <Compile Include="Controllers\SchoolsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountabilitiesController.cs" />
+    <Compile Include="Models\CommunicationTool.cs" />
+    <Compile Include="Models\CleanAirChampion.cs" />
+    <Compile Include="Models\ExtraActivites.cs" />
+    <Compile Include="Models\ParentsCommunication.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\MeetingType.cs" />
+    <Compile Include="Models\MeetingTracker.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\RAANNotification.cs" />
+    <Compile Include="Models\Accountability.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\School.cs" />
+    <Compile Include="Models\SchoolTrackerContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\dist\library.min.css" />
+    <Content Include="Content\dist\library.native.min.css" />
+    <Content Include="Content\js\demo.js" />
+    <Content Include="Content\js\docs.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\font-awesome.min.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\images\_vti_cnf\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\images\_vti_cnf\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\jquery-ui.min.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\ref.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\source-sans-pro.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\_vti_cnf\font-awesome.min.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\_vti_cnf\jquery-ui.min.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\_vti_cnf\ref.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\css\_vti_cnf\source-sans-pro.css" />
+    <Content Include="Content\js\highchart\4.2.6\api\highcharts.html" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-114x114.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-120x120.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-144x144.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-152x152.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-180x180.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-57x57.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-60x60.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-72x72.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\apple-touch-icon-76x76.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\favicon-160x160.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\favicon-16x16.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\favicon-192x192.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\favicon-32x32.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\favicon-96x96.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\Highcharts.svg" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\splash.svg" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\sprite.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-114x114.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-120x120.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-144x144.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-152x152.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-180x180.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-57x57.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-60x60.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-72x72.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\apple-touch-icon-76x76.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\favicon-160x160.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\favicon-16x16.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\favicon-192x192.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\favicon-32x32.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\favicon-96x96.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\Highcharts.svg" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\splash.svg" />
+    <Content Include="Content\js\highchart\4.2.6\api\images\_vti_cnf\sprite.png" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\jquery-ui.min.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\ref.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\_vti_cnf\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\_vti_cnf\jquery-ui.min.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\_vti_cnf\ref.js" />
+    <Content Include="Content\js\highchart\4.2.6\api\_vti_cnf\highcharts.html" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-column-interactive\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-column-interactive\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-column-null-values\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-column-null-values\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-column-stacking-grouping\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-column-stacking-grouping\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-pie-donut\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-pie-donut\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-pie\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-pie\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-scatter-draggable\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\3d-scatter-draggable\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-basic\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-basic\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-inverted\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-inverted\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-missing\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-missing\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-negative\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-negative\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-stacked-percent\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-stacked-percent\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-stacked\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\area-stacked\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\arearange-line\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\arearange-line\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\arearange\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\arearange\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\areaspline\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\areaspline\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bar-basic\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bar-basic\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bar-negative-stack\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bar-negative-stack\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bar-stacked\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bar-stacked\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\box-plot\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\box-plot\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bubble-3d\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bubble-3d\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bubble\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\bubble\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-basic\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-basic\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-drilldown\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-drilldown\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-negative\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-negative\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-parsed\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-parsed\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-placement\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-placement\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-rotated-labels\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-rotated-labels\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-stacked-and-grouped\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-stacked-and-grouped\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-stacked-percent\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-stacked-percent\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-stacked\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\column-stacked\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\columnrange\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\columnrange\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-dual-axes\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-dual-axes\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-histogram\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-histogram\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-meteogram\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-meteogram\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-multi-axes\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-multi-axes\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-regression\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-regression\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-timeline\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo-timeline\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\combo\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\dynamic-click-to-add\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\dynamic-click-to-add\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\dynamic-master-detail\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\dynamic-master-detail\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\dynamic-update\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\dynamic-update\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\error-bar\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\error-bar\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\funnel\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\funnel\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-activity\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-activity\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-clock\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-clock\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-dual\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-dual\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-solid\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-solid\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-speedometer\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-speedometer\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-vu-meter\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\gauge-vu-meter\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\heatmap-canvas\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\heatmap-canvas\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\heatmap\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\heatmap\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-ajax\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-ajax\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-basic\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-basic\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-labels\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-labels\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-log-axis\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-log-axis\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-time-series\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\line-time-series\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-basic\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-basic\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-donut\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-donut\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-drilldown\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-drilldown\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-gradient\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-gradient\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-legend\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-legend\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-monochrome\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-monochrome\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-semi-circle\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pie-semi-circle\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polar-spider\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polar-spider\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polar-wind-rose\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polar-wind-rose\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polar\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polar\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polygon\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\polygon\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pyramid\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\pyramid\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\renderer\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\renderer\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\scatter\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\scatter\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\sparkline\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\sparkline\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-inverted\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-inverted\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-irregular-time\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-irregular-time\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-plot-bands\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-plot-bands\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-symbols\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\spline-symbols\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\synchronized-charts\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\synchronized-charts\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\treemap-coloraxis\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\treemap-coloraxis\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\treemap-large-dataset\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\treemap-large-dataset\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\treemap-with-levels\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\treemap-with-levels\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\waterfall\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\examples\waterfall\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\gfx\vml-radial-gradient.png" />
+    <Content Include="Content\js\highchart\4.2.6\gfx\_vti_cnf\vml-radial-gradient.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\close.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\closeX.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\outlines\rounded-white.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\outlines\_vti_cnf\rounded-white.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\resize.gif" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\zoomout.cur" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\_vti_cnf\close.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\_vti_cnf\closeX.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\_vti_cnf\resize.gif" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\highslide\_vti_cnf\zoomout.cur" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\meteogram-symbols-30px.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\search.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\skies.jpg" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\snow.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\sun.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\_vti_cnf\meteogram-symbols-30px.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\_vti_cnf\search.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\_vti_cnf\skies.jpg" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\_vti_cnf\snow.png" />
+    <Content Include="Content\js\highchart\4.2.6\graphics\_vti_cnf\sun.png" />
+    <Content Include="Content\js\highchart\4.2.6\index.htm" />
+    <Content Include="Content\js\highchart\4.2.6\js\adapters\standalone-framework.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\adapters\standalone-framework.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\adapters\_vti_cnf\standalone-framework.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\adapters\_vti_cnf\standalone-framework.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\highcharts-3d.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\highcharts-3d.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\highcharts-more.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\highcharts-more.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\highcharts.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\highcharts.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\boost.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\boost.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\broken-axis.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\broken-axis.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\canvas-tools.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\canvas-tools.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\data.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\data.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\drilldown.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\drilldown.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\exporting.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\exporting.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\funnel.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\funnel.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\heatmap.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\heatmap.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\no-data-to-display.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\no-data-to-display.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\offline-exporting.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\offline-exporting.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\solid-gauge.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\solid-gauge.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\treemap.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\treemap.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\boost.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\boost.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\broken-axis.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\broken-axis.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\canvas-tools.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\canvas-tools.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\data.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\data.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\drilldown.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\drilldown.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\exporting.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\exporting.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\funnel.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\funnel.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\heatmap.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\heatmap.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\no-data-to-display.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\no-data-to-display.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\offline-exporting.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\offline-exporting.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\solid-gauge.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\solid-gauge.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\treemap.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\modules\_vti_cnf\treemap.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\dark-blue.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\dark-green.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\dark-unica.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\gray.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\grid-light.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\grid.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\sand-signika.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\skies.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\dark-blue.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\dark-green.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\dark-unica.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\gray.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\grid-light.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\grid.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\sand-signika.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\themes\_vti_cnf\skies.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\_vti_cnf\highcharts-3d.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\_vti_cnf\highcharts-3d.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\_vti_cnf\highcharts-more.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\_vti_cnf\highcharts-more.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\_vti_cnf\highcharts.js" />
+    <Content Include="Content\js\highchart\4.2.6\js\_vti_cnf\highcharts.src.js" />
+    <Content Include="Content\js\highchart\4.2.6\_vti_cnf\index.htm" />
+    <Content Include="Content\js\highchart\theme\bruise.js" />
+    <Content Include="Content\js\highchart\theme\_vti_cnf\bruise.js" />
+    <Content Include="Content\js\highlight\highlight.pack.js" />
+    <Content Include="Content\js\highlight\styles\agate.css" />
+    <Content Include="Content\js\highlight\styles\androidstudio.css" />
+    <Content Include="Content\js\highlight\styles\arduino-light.css" />
+    <Content Include="Content\js\highlight\styles\arta.css" />
+    <Content Include="Content\js\highlight\styles\ascetic.css" />
+    <Content Include="Content\js\highlight\styles\atelier-cave-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-cave-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-dune-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-dune-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-estuary-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-estuary-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-forest-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-forest-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-heath-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-heath-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-lakeside-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-lakeside-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-plateau-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-plateau-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-savanna-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-savanna-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-seaside-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-seaside-light.css" />
+    <Content Include="Content\js\highlight\styles\atelier-sulphurpool-dark.css" />
+    <Content Include="Content\js\highlight\styles\atelier-sulphurpool-light.css" />
+    <Content Include="Content\js\highlight\styles\atom-one-dark.css" />
+    <Content Include="Content\js\highlight\styles\atom-one-light.css" />
+    <Content Include="Content\js\highlight\styles\brown-paper.css" />
+    <Content Include="Content\js\highlight\styles\brown-papersq.png" />
+    <Content Include="Content\js\highlight\styles\codepen-embed.css" />
+    <Content Include="Content\js\highlight\styles\color-brewer.css" />
+    <Content Include="Content\js\highlight\styles\darcula.css" />
+    <Content Include="Content\js\highlight\styles\dark.css" />
+    <Content Include="Content\js\highlight\styles\darkula.css" />
+    <Content Include="Content\js\highlight\styles\default.css" />
+    <Content Include="Content\js\highlight\styles\docco.css" />
+    <Content Include="Content\js\highlight\styles\dracula.css" />
+    <Content Include="Content\js\highlight\styles\far.css" />
+    <Content Include="Content\js\highlight\styles\foundation.css" />
+    <Content Include="Content\js\highlight\styles\github-gist.css" />
+    <Content Include="Content\js\highlight\styles\github.css" />
+    <Content Include="Content\js\highlight\styles\googlecode.css" />
+    <Content Include="Content\js\highlight\styles\grayscale.css" />
+    <Content Include="Content\js\highlight\styles\gruvbox-dark.css" />
+    <Content Include="Content\js\highlight\styles\gruvbox-light.css" />
+    <Content Include="Content\js\highlight\styles\hopscotch.css" />
+    <Content Include="Content\js\highlight\styles\hybrid.css" />
+    <Content Include="Content\js\highlight\styles\idea.css" />
+    <Content Include="Content\js\highlight\styles\ir-black.css" />
+    <Content Include="Content\js\highlight\styles\kimbie.dark.css" />
+    <Content Include="Content\js\highlight\styles\kimbie.light.css" />
+    <Content Include="Content\js\highlight\styles\magula.css" />
+    <Content Include="Content\js\highlight\styles\mono-blue.css" />
+    <Content Include="Content\js\highlight\styles\monokai-sublime.css" />
+    <Content Include="Content\js\highlight\styles\monokai.css" />
+    <Content Include="Content\js\highlight\styles\obsidian.css" />
+    <Content Include="Content\js\highlight\styles\ocean.css" />
+    <Content Include="Content\js\highlight\styles\paraiso-dark.css" />
+    <Content Include="Content\js\highlight\styles\paraiso-light.css" />
+    <Content Include="Content\js\highlight\styles\pojoaque.css" />
+    <Content Include="Content\js\highlight\styles\pojoaque.jpg" />
+    <Content Include="Content\js\highlight\styles\purebasic.css" />
+    <Content Include="Content\js\highlight\styles\qtcreator_dark.css" />
+    <Content Include="Content\js\highlight\styles\qtcreator_light.css" />
+    <Content Include="Content\js\highlight\styles\railscasts.css" />
+    <Content Include="Content\js\highlight\styles\rainbow.css" />
+    <Content Include="Content\js\highlight\styles\school-book.css" />
+    <Content Include="Content\js\highlight\styles\school-book.png" />
+    <Content Include="Content\js\highlight\styles\solarized-dark.css" />
+    <Content Include="Content\js\highlight\styles\solarized-light.css" />
+    <Content Include="Content\js\highlight\styles\sunburst.css" />
+    <Content Include="Content\js\highlight\styles\tomorrow-night-blue.css" />
+    <Content Include="Content\js\highlight\styles\tomorrow-night-bright.css" />
+    <Content Include="Content\js\highlight\styles\tomorrow-night-eighties.css" />
+    <Content Include="Content\js\highlight\styles\tomorrow-night.css" />
+    <Content Include="Content\js\highlight\styles\tomorrow.css" />
+    <Content Include="Content\js\highlight\styles\vs.css" />
+    <Content Include="Content\js\highlight\styles\xcode.css" />
+    <Content Include="Content\js\highlight\styles\xt256.css" />
+    <Content Include="Content\js\highlight\styles\zenburn.css" />
+    <Content Include="Content\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\library.js" />
+    <Content Include="Content\js\lis-basic.js" />
+    <Content Include="Content\js\list.min.js" />
+    <Content Include="Content\js\microlight.min.js" />
+    <Content Include="Content\js\raan\chartconfig.js" />
+    <Content Include="Content\js\showdown.min.js" />
+    <Content Include="Content\js\showdown\node_modules\camelcase\index.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\index.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\assign.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\command.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\completion.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\levenshtein.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\obj-filter.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\usage.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\lib\validation.js" />
+    <Content Include="Content\js\showdown\node_modules\yargs\yargs.js" />
+    <Content Include="Content\js\showdown\src\cli\cli.js" />
+    <Content Include="Content\js\showdown\src\cli\makehtml.cmd.js" />
+    <Content Include="Content\js\showdown\src\cli\messenger.js" />
+    <Content Include="Content\js\showdown\src\converter.js" />
+    <Content Include="Content\js\showdown\src\helpers.js" />
+    <Content Include="Content\js\showdown\src\loader.js" />
+    <Content Include="Content\js\showdown\src\options.js" />
+    <Content Include="Content\js\showdown\src\showdown.js" />
+    <Content Include="Content\js\showdown\src\subParsers\anchors.js" />
+    <Content Include="Content\js\showdown\src\subParsers\autoLinks.js" />
+    <Content Include="Content\js\showdown\src\subParsers\blockGamut.js" />
+    <Content Include="Content\js\showdown\src\subParsers\blockQuotes.js" />
+    <Content Include="Content\js\showdown\src\subParsers\codeBlocks.js" />
+    <Content Include="Content\js\showdown\src\subParsers\codeSpans.js" />
+    <Content Include="Content\js\showdown\src\subParsers\detab.js" />
+    <Content Include="Content\js\showdown\src\subParsers\encodeAmpsAndAngles.js" />
+    <Content Include="Content\js\showdown\src\subParsers\encodeBackslashEscapes.js" />
+    <Content Include="Content\js\showdown\src\subParsers\encodeCode.js" />
+    <Content Include="Content\js\showdown\src\subParsers\escapeSpecialCharsWithinTagAttributes.js" />
+    <Content Include="Content\js\showdown\src\subParsers\githubCodeBlocks.js" />
+    <Content Include="Content\js\showdown\src\subParsers\hashBlock.js" />
+    <Content Include="Content\js\showdown\src\subParsers\hashCodeTags.js" />
+    <Content Include="Content\js\showdown\src\subParsers\hashElement.js" />
+    <Content Include="Content\js\showdown\src\subParsers\hashHTMLBlocks.js" />
+    <Content Include="Content\js\showdown\src\subParsers\hashHTMLSpans.js" />
+    <Content Include="Content\js\showdown\src\subParsers\hashPreCodeTags.js" />
+    <Content Include="Content\js\showdown\src\subParsers\headers.js" />
+    <Content Include="Content\js\showdown\src\subParsers\horizontalRule.js" />
+    <Content Include="Content\js\showdown\src\subParsers\images.js" />
+    <Content Include="Content\js\showdown\src\subParsers\italicsAndBold.js" />
+    <Content Include="Content\js\showdown\src\subParsers\lists.js" />
+    <Content Include="Content\js\showdown\src\subParsers\outdent.js" />
+    <Content Include="Content\js\showdown\src\subParsers\paragraphs.js" />
+    <Content Include="Content\js\showdown\src\subParsers\runExtension.js" />
+    <Content Include="Content\js\showdown\src\subParsers\spanGamut.js" />
+    <Content Include="Content\js\showdown\src\subParsers\strikethrough.js" />
+    <Content Include="Content\js\showdown\src\subParsers\stripLinkDefinitions.js" />
+    <Content Include="Content\js\showdown\src\subParsers\tables.js" />
+    <Content Include="Content\js\showdown\src\subParsers\unescapeSpecialChars.js" />
+    <Content Include="Content\src\black-tie\css\black-tie.css" />
+    <Content Include="Content\src\black-tie\css\black-tie.min.css" />
+    <Content Include="Content\src\black-tie\documentation\all.html" />
+    <Content Include="Content\src\black-tie\documentation\assets\css\prettify.css" />
+    <Content Include="Content\src\black-tie\documentation\assets\css\pygments.css" />
+    <Content Include="Content\src\black-tie\documentation\assets\css\site.css" />
+    <Content Include="Content\src\black-tie\documentation\assets\ico\favicon.ico" />
+    <Content Include="Content\src\black-tie\documentation\assets\js\prettify.min.js" />
+    <Content Include="Content\src\black-tie\documentation\assets\js\site.js" />
+    <Content Include="Content\src\black-tie\fonts\bold\BlackTie-Bold-webfont.svg" />
+    <Content Include="Content\src\black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.svg" />
+    <Content Include="Content\src\black-tie\fonts\light\BlackTie-Light-webfont.svg" />
+    <Content Include="Content\src\black-tie\fonts\regular\BlackTie-Regular-webfont.svg" />
+    <Content Include="Content\src\black-tie\fonts\solid\BlackTie-Solid-webfont.svg" />
+    <Content Include="Content\src\black-tie\license.txt" />
+    <Content Include="Content\src\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\src\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\src\font-awesome\css\_vti_cnf\font-awesome.css" />
+    <Content Include="Content\src\font-awesome\css\_vti_cnf\font-awesome.min.css" />
+    <Content Include="Content\src\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\fontawesome-webfont.svg" />
+    <Content Include="Content\src\fonts\Fjalla_One\OFL.txt" />
+    <Content Include="Content\src\fonts\Lato\OFL.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\bridge.jpg" />
+    <Content Include="Images\main.PNG" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\src\black-tie\fonts\bold\BlackTie-Bold-webfont.eot" />
+    <Content Include="Content\src\black-tie\fonts\bold\BlackTie-Bold-webfont.ttf" />
+    <Content Include="Content\src\black-tie\fonts\bold\BlackTie-Bold-webfont.woff" />
+    <Content Include="Content\src\black-tie\fonts\bold\BlackTie-Bold-webfont.woff2" />
+    <Content Include="Content\src\black-tie\fonts\bold\BlackTie-Bold.otf" />
+    <Content Include="Content\src\black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.eot" />
+    <Content Include="Content\src\black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.ttf" />
+    <Content Include="Content\src\black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.woff" />
+    <Content Include="Content\src\black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.woff2" />
+    <Content Include="Content\src\black-tie\fonts\brands\FontAwesomeBrands-Regular.otf" />
+    <Content Include="Content\src\black-tie\fonts\light\BlackTie-Light-webfont.eot" />
+    <Content Include="Content\src\black-tie\fonts\light\BlackTie-Light-webfont.ttf" />
+    <Content Include="Content\src\black-tie\fonts\light\BlackTie-Light-webfont.woff" />
+    <Content Include="Content\src\black-tie\fonts\light\BlackTie-Light-webfont.woff2" />
+    <Content Include="Content\src\black-tie\fonts\light\BlackTie-Light.otf" />
+    <Content Include="Content\src\black-tie\fonts\regular\BlackTie-Regular-webfont.eot" />
+    <Content Include="Content\src\black-tie\fonts\regular\BlackTie-Regular-webfont.ttf" />
+    <Content Include="Content\src\black-tie\fonts\regular\BlackTie-Regular-webfont.woff" />
+    <Content Include="Content\src\black-tie\fonts\regular\BlackTie-Regular-webfont.woff2" />
+    <Content Include="Content\src\black-tie\fonts\regular\BlackTie-Regular.otf" />
+    <Content Include="Content\src\black-tie\fonts\solid\BlackTie-Solid-webfont.eot" />
+    <Content Include="Content\src\black-tie\fonts\solid\BlackTie-Solid-webfont.ttf" />
+    <Content Include="Content\src\black-tie\fonts\solid\BlackTie-Solid-webfont.woff" />
+    <Content Include="Content\src\black-tie\fonts\solid\BlackTie-Solid-webfont.woff2" />
+    <Content Include="Content\src\black-tie\fonts\solid\BlackTie-Solid.otf" />
+    <Content Include="Content\src\black-tie\less\animated.less" />
+    <Content Include="Content\src\black-tie\less\black-tie.less" />
+    <Content Include="Content\src\black-tie\less\bordered-pulled.less" />
+    <Content Include="Content\src\black-tie\less\core.less" />
+    <Content Include="Content\src\black-tie\less\fixed-width.less" />
+    <Content Include="Content\src\black-tie\less\icons.less" />
+    <Content Include="Content\src\black-tie\less\list.less" />
+    <Content Include="Content\src\black-tie\less\mixins.less" />
+    <Content Include="Content\src\black-tie\less\path.less" />
+    <Content Include="Content\src\black-tie\less\rotated-flipped.less" />
+    <Content Include="Content\src\black-tie\less\sizes.less" />
+    <Content Include="Content\src\black-tie\less\stacked.less" />
+    <Content Include="Content\src\black-tie\less\variables.less" />
+    <Content Include="Content\src\black-tie\scss\black-tie.scss" />
+    <Content Include="Content\src\black-tie\scss\_animated.scss" />
+    <Content Include="Content\src\black-tie\scss\_bordered-pulled.scss" />
+    <Content Include="Content\src\black-tie\scss\_core.scss" />
+    <Content Include="Content\src\black-tie\scss\_fixed-width.scss" />
+    <Content Include="Content\src\black-tie\scss\_icons.scss" />
+    <Content Include="Content\src\black-tie\scss\_list.scss" />
+    <Content Include="Content\src\black-tie\scss\_mixins.scss" />
+    <Content Include="Content\src\black-tie\scss\_path.scss" />
+    <Content Include="Content\src\black-tie\scss\_rotated-flipped.scss" />
+    <Content Include="Content\src\black-tie\scss\_sizes.scss" />
+    <Content Include="Content\src\black-tie\scss\_stacked.scss" />
+    <Content Include="Content\src\black-tie\scss\_variables.scss" />
+    <Content Include="Content\src\entry.scss" />
+    <Content Include="Content\src\font-awesome\fonts\.htaccess" />
+    <Content Include="Content\src\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\src\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\src\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\src\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\src\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\src\font-awesome\fonts\htaccess" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\fontawesome-webfont.eot" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\fontawesome-webfont.ttf" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\fontawesome-webfont.woff" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\fontawesome-webfont.woff2" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\FontAwesome.otf" />
+    <Content Include="Content\src\font-awesome\fonts\_vti_cnf\htaccess" />
+    <Content Include="Content\src\font-awesome\less\animated.less" />
+    <Content Include="Content\src\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\src\font-awesome\less\core.less" />
+    <Content Include="Content\src\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\src\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\src\font-awesome\less\icons.less" />
+    <Content Include="Content\src\font-awesome\less\larger.less" />
+    <Content Include="Content\src\font-awesome\less\list.less" />
+    <Content Include="Content\src\font-awesome\less\mixins.less" />
+    <Content Include="Content\src\font-awesome\less\path.less" />
+    <Content Include="Content\src\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\src\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\src\font-awesome\less\stacked.less" />
+    <Content Include="Content\src\font-awesome\less\variables.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\animated.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\bordered-pulled.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\core.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\fixed-width.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\font-awesome.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\icons.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\larger.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\list.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\mixins.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\path.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\rotated-flipped.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\stacked.less" />
+    <Content Include="Content\src\font-awesome\less\_vti_cnf\variables.less" />
+    <Content Include="Content\src\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\src\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\src\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\src\font-awesome\scss\_core.scss" />
+    <Content Include="Content\src\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\src\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\src\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\src\font-awesome\scss\_list.scss" />
+    <Content Include="Content\src\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\src\font-awesome\scss\_path.scss" />
+    <Content Include="Content\src\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\src\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\src\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\src\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\font-awesome.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_animated.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_bordered-pulled.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_core.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_fixed-width.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_icons.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_larger.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_list.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_mixins.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_path.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_rotated-flipped.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_stacked.scss" />
+    <Content Include="Content\src\font-awesome\scss\_vti_cnf\_variables.scss" />
+    <Content Include="Content\src\fonts\Fjalla_One\FjallaOne-Regular-ext.woff2" />
+    <Content Include="Content\src\fonts\Fjalla_One\FjallaOne-Regular.ttf" />
+    <Content Include="Content\src\fonts\Fjalla_One\FjallaOne-Regular.woff2" />
+    <Content Include="Content\src\fonts\Lato\Lato-Black.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-BlackItalic.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Bold-ext.woff2" />
+    <Content Include="Content\src\fonts\Lato\Lato-Bold.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Bold.woff2" />
+    <Content Include="Content\src\fonts\Lato\Lato-BoldItalic.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Hairline.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-HairlineItalic.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Italic.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Light-ext.woff2" />
+    <Content Include="Content\src\fonts\Lato\Lato-Light.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Light.woff2" />
+    <Content Include="Content\src\fonts\Lato\Lato-LightItalic.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Regular-ext.woff2" />
+    <Content Include="Content\src\fonts\Lato\Lato-Regular.ttf" />
+    <Content Include="Content\src\fonts\Lato\Lato-Regular.woff2" />
+    <Content Include="Content\src\scss\bootstrapgrid\_grid-framework.scss" />
+    <Content Include="Content\src\scss\bootstrapgrid\_grid.scss" />
+    <Content Include="Content\src\scss\flexboxgrid\_grid.scss" />
+    <Content Include="Content\src\scss\product\_demo.scss" />
+    <Content Include="Content\src\scss\product\_markdown.scss" />
+    <Content Include="Content\src\scss\product\_raan-charts.scss" />
+    <Content Include="Content\src\scss\utils\_cdn.scss" />
+    <Content Include="Content\src\scss\utils\_local.scss" />
+    <Content Include="Content\src\scss\utils\_mixins.scss" />
+    <Content Include="Content\src\scss\vendor\_reset.scss" />
+    <Content Include="Content\src\scss\_background-colors.scss" />
+    <Content Include="Content\src\scss\_badges.scss" />
+    <Content Include="Content\src\scss\_bootstrapgrid.scss" />
+    <Content Include="Content\src\scss\_buttons.scss" />
+    <Content Include="Content\src\scss\_flexboxgrid.scss" />
+    <Content Include="Content\src\scss\_forms.scss" />
+    <Content Include="Content\src\scss\_helpers.scss" />
+    <Content Include="Content\src\scss\_layout.scss" />
+    <Content Include="Content\src\scss\_loading-bar.scss" />
+    <Content Include="Content\src\scss\_loading-spinner.scss" />
+    <Content Include="Content\src\scss\_main.scss" />
+    <Content Include="Content\src\scss\_message-bars.scss" />
+    <Content Include="Content\src\scss\_modals.scss" />
+    <Content Include="Content\src\scss\_navigation.scss" />
+    <Content Include="Content\src\scss\_paginator.scss" />
+    <Content Include="Content\src\scss\_placeholders.scss" />
+    <Content Include="Content\src\scss\_progress-tracker.scss" />
+    <Content Include="Content\src\scss\_rating-circle.scss" />
+    <Content Include="Content\src\scss\_tables.scss" />
+    <Content Include="Content\src\scss\_tabs.scss" />
+    <Content Include="Content\src\scss\_tags.scss" />
+    <Content Include="Content\src\scss\_typography.scss" />
+    <Content Include="Content\src\_library.scss" />
+    <Content Include="Content\src\_variables.scss" />
+    <Content Include="Content\js\highchart\4.2.6\api\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\js\highchart\4.2.6\api\fonts\_vti_cnf\fontawesome-webfont.woff" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\highcharts.json" />
+    <Content Include="Content\js\highchart\4.2.6\api\js\_vti_cnf\highcharts.json" />
+    <Content Include="Content\js\highlight\CHANGES.md" />
+    <Content Include="Content\js\highlight\LICENSE" />
+    <Content Include="Content\js\highlight\README.md" />
+    <Content Include="Content\js\highlight\README.ru.md" />
+    <Content Include="Content\js\showdown\node_modules\camelcase\license" />
+    <Content Include="Content\js\showdown\node_modules\camelcase\package.json" />
+    <Content Include="Content\js\showdown\node_modules\camelcase\readme.md" />
+    <Content Include="Content\js\showdown\node_modules\yargs\CHANGELOG.md" />
+    <Content Include="Content\js\showdown\node_modules\yargs\completion.sh.hbs" />
+    <Content Include="Content\js\showdown\node_modules\yargs\LICENSE" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\be.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\de.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\en.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\es.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\fr.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\hi.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\hu.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\id.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\it.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\ja.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\ko.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\nb.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\nl.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\pirate.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\pl.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\pt.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\pt_BR.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\ru.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\th.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\tr.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\locales\zh_CN.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\package.json" />
+    <Content Include="Content\js\showdown\node_modules\yargs\README.md" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Accountabilities\Create.cshtml" />
+    <Content Include="Views\Accountabilities\Delete.cshtml" />
+    <Content Include="Views\Accountabilities\Details.cshtml" />
+    <Content Include="Views\Accountabilities\Edit.cshtml" />
+    <Content Include="Views\Accountabilities\Index.cshtml" />
+    <Content Include="Views\CleanAirChampions\Create.cshtml" />
+    <Content Include="Views\CleanAirChampions\Delete.cshtml" />
+    <Content Include="Views\CleanAirChampions\Details.cshtml" />
+    <Content Include="Views\CleanAirChampions\Edit.cshtml" />
+    <Content Include="Views\CleanAirChampions\Index.cshtml" />
+    <Content Include="Views\CommunicationTools\Create.cshtml" />
+    <Content Include="Views\CommunicationTools\Delete.cshtml" />
+    <Content Include="Views\CommunicationTools\Details.cshtml" />
+    <Content Include="Views\CommunicationTools\Edit.cshtml" />
+    <Content Include="Views\CommunicationTools\Index.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
+    <Content Include="Views\Contacts\Details.cshtml" />
+    <Content Include="Views\Contacts\Edit.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\ExtraActivites\Create.cshtml" />
+    <Content Include="Views\ExtraActivites\Delete.cshtml" />
+    <Content Include="Views\ExtraActivites\Details.cshtml" />
+    <Content Include="Views\ExtraActivites\Edit.cshtml" />
+    <Content Include="Views\ExtraActivites\Index.cshtml" />
+    <Content Include="Views\Materials\Create.cshtml" />
+    <Content Include="Views\Materials\Delete.cshtml" />
+    <Content Include="Views\Materials\Details.cshtml" />
+    <Content Include="Views\Materials\Edit.cshtml" />
+    <Content Include="Views\Materials\Index.cshtml" />
+    <Content Include="Views\MeetingTrackers\Create.cshtml" />
+    <Content Include="Views\MeetingTrackers\Delete.cshtml" />
+    <Content Include="Views\MeetingTrackers\Details.cshtml" />
+    <Content Include="Views\MeetingTrackers\Edit.cshtml" />
+    <Content Include="Views\MeetingTrackers\Index.cshtml" />
+    <Content Include="Views\MeetingTypes\Create.cshtml" />
+    <Content Include="Views\MeetingTypes\Delete.cshtml" />
+    <Content Include="Views\MeetingTypes\Details.cshtml" />
+    <Content Include="Views\MeetingTypes\Edit.cshtml" />
+    <Content Include="Views\MeetingTypes\Index.cshtml" />
+    <Content Include="Views\Notes\Create.cshtml" />
+    <Content Include="Views\Notes\Delete.cshtml" />
+    <Content Include="Views\Notes\Details.cshtml" />
+    <Content Include="Views\Notes\Edit.cshtml" />
+    <Content Include="Views\Notes\Index.cshtml" />
+    <Content Include="Views\ParentsCommunications\Create.cshtml" />
+    <Content Include="Views\ParentsCommunications\Delete.cshtml" />
+    <Content Include="Views\ParentsCommunications\Details.cshtml" />
+    <Content Include="Views\ParentsCommunications\Edit.cshtml" />
+    <Content Include="Views\ParentsCommunications\Index.cshtml" />
+    <Content Include="Views\RAANNotifications\Create.cshtml" />
+    <Content Include="Views\RAANNotifications\Delete.cshtml" />
+    <Content Include="Views\RAANNotifications\Details.cshtml" />
+    <Content Include="Views\RAANNotifications\Edit.cshtml" />
+    <Content Include="Views\RAANNotifications\Index.cshtml" />
+    <Content Include="Views\Schools\Create.cshtml" />
+    <Content Include="Views\Schools\Delete.cshtml" />
+    <Content Include="Views\Schools\Details.cshtml" />
+    <Content Include="Views\Schools\Edit.cshtml" />
+    <Content Include="Views\Schools\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52672</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52672/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

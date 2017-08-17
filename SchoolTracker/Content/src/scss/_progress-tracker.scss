@@ -1,0 +1,138 @@
+// Progress Tracker
+// 
+.progress-tracker {
+  margin: 0;
+  padding: 0.8em 0.8em 0 0.8em;
+  background: white;
+  height: 80px;
+  background: $gray;
+  @include borderRadius(0.5em);
+  // @include box-shadow(0 4px 6px -5px rgba(0,0,0,0.6));
+  border: 1px solid $border-color;
+
+  &--light {
+    background: none;
+    // border: none;
+    @include box-shadow(0 0 0 0 transparent);
+  }
+  
+  li {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 4px solid $brand-dark;
+    line-height: 3em;
+    width: 25%;
+    float: left;
+    font-size: 0.8em;
+    
+    &:after {
+      content: "\00a0\00a0"; 
+      // non-breaking space 
+    }
+    
+    &:before {
+      position: relative;
+      bottom: -2.5em;
+      float: left;
+      left: 50%;
+      line-height: 1em;
+    }
+
+    @include break-point-max(medium) {
+      font-size: 0.7em;
+    }
+    
+    span {
+      padding-left: 0.75em;
+      @include break-point-max(medium) {
+        display: none;
+      }
+    }
+  }
+  
+  &__done {
+    font-weight: bold;
+    border-bottom: 4px solid $brand-primary !important;
+    color: $brand-primary;
+    
+    &:before {
+      content: "";
+      background: $brand-primary;
+      height: 1.2em;
+      width: 1.2em;
+      line-height: 1.2em;
+      border: none;
+      border-radius: 1.2em;
+    }
+  }
+  
+  &__todo:before {
+    content: "";
+    background: white;
+    border: 0.25em solid $brand-dark;
+    height: 1.2em;
+    width: 1.2em;
+    border-radius: 1.2em;
+  }
+  
+  em {
+    display: none;
+    font-weight: 700;
+    padding-left: 0.75em;
+    
+    @include break-point-max(medium) {
+      display: inline;
+    }
+  }
+
+  &--table {
+    background: none;
+    @include box-shadow(0 0 0 0 transparent);
+
+    display: table;
+    width: 100%;
+
+    li {
+      display: table-cell;
+      width: auto;
+      // float: left;
+    }
+  }
+}
+
+// Progress Bar
+// 
+.progress-bar {
+  background: $gray;
+  padding: 1em;
+  border: 1px solid $border-color;
+  @include borderRadius(0.2em);
+
+  &__value {
+    background: $brand-dark;
+    padding: 0.2em;
+    @include borderRadius(0.2em);
+
+    span {
+      color: white;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &--primary {
+    .progress-bar__value {
+      background: $brand-primary;
+    }
+  }
+
+  &--secondary {
+    .progress-bar__value {
+      background: $brand-secondary;
+    }
+  }
+}

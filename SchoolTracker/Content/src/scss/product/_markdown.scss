@@ -1,0 +1,85 @@
+// Demo 
+// 
+// Markdown styles for documentation
+
+.docs {
+
+// Typography
+// 
+h1 {
+	font-size: 2.5em;
+    line-height: 1.2em;
+    margin-bottom: 0.5em; 
+    margin-top: 1.5em;
+
+    a {
+    	// display: none;
+    	// opacity: 0;
+    	border: none;
+    	// color: $brand-dark;
+
+    	&:hover {
+    		background: none;
+    	}
+
+    	&::before {
+    		content: "#";
+    	}
+    }
+}
+
+h2 { @extend h1; font-size: 2em; }
+
+h3 { @extend h1; font-size: 1.75em; }
+
+h4 { @extend h1; font-size: 1.5em; }
+
+h5 { @extend h1; font-size: 1.25em; }
+
+h6 { @extend h1; font-size: 1em; }
+
+hr {
+    border-bottom: 4px solid $brand-light;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: 1rem 0;
+    height: 0;
+}
+
+blockquote {
+	background: $brand-light;
+	padding: 0.5em;
+	padding-left: 2em;
+	border-left: 6px solid $brand-dark;
+
+	p {
+		margin: 0;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			margin: 0;
+		}
+	}
+}
+
+code {
+	text-shadow: 0 1px rgba(0, 0, 0, 0.43);
+	background: #222222;
+}
+
+table {
+	@extend .table;
+
+	tr:nth-child(even) {
+		background: white;
+	}
+}
+
+}
+

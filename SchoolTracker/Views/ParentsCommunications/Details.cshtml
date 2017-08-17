@@ -1,0 +1,50 @@
+﻿@model SchoolTracker.Models.ParentsCommunication
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ParentsCommunication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassRoomDojo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassRoomDojo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeachJar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeachJar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EduText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EduText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.etc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.etc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

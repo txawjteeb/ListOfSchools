@@ -1,0 +1,56 @@
+﻿@model SchoolTracker.Models.ParentsCommunication
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ParentsCommunication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassRoomDojo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassRoomDojo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeachJar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeachJar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EduText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EduText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.etc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.etc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

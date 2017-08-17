@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/dist/library.min.css" rel="stylesheet" />
+    <link href="~/Content/js/highlight/styles/monokai.css" rel="stylesheet" />
+    <link href="~/Content/src/black-tie/css/black-tie.min.css" rel="stylesheet" />
+    <link href="~/Content/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <nav class="nav nav--dark">
+            <div class="nav__collapse">
+                <ul class="nav__list">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" })</li>
+                    <li class="nav__dropdown-toggle">
+                        <a href="#">Schools <i class="bts bt-caret-down"></i></a>
+                        <ul class="nav__dropdown-list">
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Fresno County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Alvina Elementary Charter</a></li>
+                                    <li><a href="#">Big Creek Elementary</a></li>
+                                    <li><a href="#">Burrel Union Elementary</a></li>
+                                    <li><a href="#">Caruthers Unified</a></li>
+                                    <li><a href="#">Central Unified</a></li>
+                                    <li><a href="#">Clay Joint Elementary</a></li>
+                                    <li><a href="#">Clovis Unified</a></li>
+                                    <li><a href="#">Coalinga-Huron Unified</a></li>
+                                    <li><a href="#">Firebaugh-Las Deltas Unified</a></li>
+                                    <li><a href="#">Fowler Unified</a></li>
+                                    <li><a href="#">Fresno Unified</a></li>
+                                    <li><a href="#">Golden Plains Unified</a></li>
+                                    <li><a href="#">Kerman Unified</a></li>
+                                    <li><a href="#">Kings Canyon Joint Unified</a></li>
+                                    <li><a href="#">Kingsburg Elementary Charter</a></li>
+                                    <li><a href="#">Kingsburg Joint Union High</a></li>
+                                    <li><a href="#">Laton Joint Unified</a></li>
+                                    <li><a href="#">Mendota Unified</a></li>
+                                    <li><a href="#">Monroe Elementary</a></li>
+                                    <li><a href="#">Orange Center</a></li>
+                                    <li><a href="#">Pacific Union Elementary</a></li>
+                                    <li><a href="#">Parlier Unified</a></li>
+                                    <li><a href="#">Pine Ridge Elementary</a></li>
+                                    <li><a href="#">Raisin City Elementary</a></li>
+                                    <li><a href="#">Riverdale Joint Unified</a></li>
+                                    <li><a href="#">Sanger Unified</a></li>
+                                    <li><a href="#">Selma Unified</a></li>
+                                    <li><a href="#">Sierra Unified</a></li>
+                                    <li><a href="#">Washington Colony Elementary</a></li>
+                                    <li><a href="#">Washington Unified</a></li>
+                                    <li><a href="#">West Park Elementary</a></li>
+                                    <li><a href="#">Westside Elementary</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Kern County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Kings County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Madera County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Merced County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">San Joaquin County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Stanislaus County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__dropdown-toggle-tertiary">
+                                <a href="#">Tulare County</a>
+                                <ul class="nav__dropdown-list-tertiary">
+                                    <li><a href="#">Lawrence</a></li>
+                                    <li><a href="#">The Maze</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    @RenderBody()
+   
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
