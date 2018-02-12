@@ -3,113 +3,58 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     <link href="~/Content/dist/library.min.css" rel="stylesheet" />
     <link href="~/Content/js/highlight/styles/monokai.css" rel="stylesheet" />
     <link href="~/Content/src/black-tie/css/black-tie.min.css" rel="stylesheet" />
     <link href="~/Content/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .scroll {
+            overflow: auto;
+            max-height: 500px;
+            padding-right: 17px;
+        }
+    </style>
 </head>
 <body>
     <div class="row">
         <nav class="nav nav--dark">
-            <div class="nav__collapse">
+            <a href="/"><h4 class="nav__title" style="margin-left: 10px;">SJVAPCD School Tracker Program&nbsp;&nbsp;<i class="bts bt-home bt-sm"></i></h4></a>
                 <ul class="nav__list">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" })</li>
-                    <li class="nav__dropdown-toggle">
-                        <a href="#">Schools <i class="bts bt-caret-down"></i></a>
+                    <li class="nav__dropdown-toggle padding-left-none padding-right-none">
+                        <a href="#"><i class="bts bt-book-open bt-sm"></i>&nbsp;&nbsp; Schools <i class="bts bt-caret-down"></i></a>
                         <ul class="nav__dropdown-list">
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Fresno County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Alvina Elementary Charter</a></li>
-                                    <li><a href="#">Big Creek Elementary</a></li>
-                                    <li><a href="#">Burrel Union Elementary</a></li>
-                                    <li><a href="#">Caruthers Unified</a></li>
-                                    <li><a href="#">Central Unified</a></li>
-                                    <li><a href="#">Clay Joint Elementary</a></li>
-                                    <li><a href="#">Clovis Unified</a></li>
-                                    <li><a href="#">Coalinga-Huron Unified</a></li>
-                                    <li><a href="#">Firebaugh-Las Deltas Unified</a></li>
-                                    <li><a href="#">Fowler Unified</a></li>
-                                    <li><a href="#">Fresno Unified</a></li>
-                                    <li><a href="#">Golden Plains Unified</a></li>
-                                    <li><a href="#">Kerman Unified</a></li>
-                                    <li><a href="#">Kings Canyon Joint Unified</a></li>
-                                    <li><a href="#">Kingsburg Elementary Charter</a></li>
-                                    <li><a href="#">Kingsburg Joint Union High</a></li>
-                                    <li><a href="#">Laton Joint Unified</a></li>
-                                    <li><a href="#">Mendota Unified</a></li>
-                                    <li><a href="#">Monroe Elementary</a></li>
-                                    <li><a href="#">Orange Center</a></li>
-                                    <li><a href="#">Pacific Union Elementary</a></li>
-                                    <li><a href="#">Parlier Unified</a></li>
-                                    <li><a href="#">Pine Ridge Elementary</a></li>
-                                    <li><a href="#">Raisin City Elementary</a></li>
-                                    <li><a href="#">Riverdale Joint Unified</a></li>
-                                    <li><a href="#">Sanger Unified</a></li>
-                                    <li><a href="#">Selma Unified</a></li>
-                                    <li><a href="#">Sierra Unified</a></li>
-                                    <li><a href="#">Washington Colony Elementary</a></li>
-                                    <li><a href="#">Washington Unified</a></li>
-                                    <li><a href="#">West Park Elementary</a></li>
-                                    <li><a href="#">Westside Elementary</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Kern County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Kings County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Madera County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Merced County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">San Joaquin County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Stanislaus County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav__dropdown-toggle-tertiary">
-                                <a href="#">Tulare County</a>
-                                <ul class="nav__dropdown-list-tertiary">
-                                    <li><a href="#">Lawrence</a></li>
-                                    <li><a href="#">The Maze</a></li>
-                                </ul>
-                            </li>
+                            @foreach (var county in ViewBag.CountyList)
+                            {
+                                <li class="nav__dropdown-toggle-tertiary">
+                                    @Html.ActionLink((string)@county.CountyName + " County", "Index", "Counties", new { countyId = (object)@county.ID }, null)
+                                    <ul class="nav__dropdown-list-tertiary">
+                                        @foreach (var district in ViewBag.SchoolDistrictList)
+                                        {
+                                            if ((int)district.CountyID == (int)county.ID)
+                                            {
+                                                <li class="nav__dropdown-toggle-tertiary">
+                                                    @Html.ActionLink((string)@district.SchoolName, "Index", "SchoolDistricts", new { districtId = (object)@district.ID }, null)
+                                                    <ul class="nav__dropdown-list-tertiary no-padding scroll">
+                                                        @foreach (var school in ViewBag.SchoolList)
+                                                        {
+                                                            if ((int)school.DistrictID == (int)district.ID)
+                                                            {
+                                                                <li>@Html.ActionLink((string)@school.SchoolName, "Details", "Schools", new { id = (object)@school.ID }, null)</li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                            }
                         </ul>
-                    </li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li><a href="/Contacts"><i class="bts bt-question-circle bt-sm"></i>&nbsp;&nbsp; Contact List</a></li>
+                    <li><a href="/Home/About"><i class="bts bt-question-circle bt-sm"></i>&nbsp;&nbsp; About</a></li>
                 </ul>
-            </div>
-        </nav>
+</nav>
     </div>
     @RenderBody()
    

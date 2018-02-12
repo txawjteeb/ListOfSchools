@@ -20,7 +20,9 @@ namespace SchoolTracker.Models
         public string MainPhone { get; set; }
         public string Website { get; set; }
         public int NumberOfStudents { get; set; }
-        public bool SchoolOrDistrict { get; set; }
+        public int DistrictID { get; set; }
+        public int ContactID { get; set; }
+        public string ImageLink { get; set; }
 
     }
 }

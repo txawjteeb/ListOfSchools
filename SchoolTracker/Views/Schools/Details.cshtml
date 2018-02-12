@@ -1,90 +1,127 @@
-﻿@model SchoolTracker.Models.School
+﻿@model IEnumerable<SchoolTracker.ViewModel.SchoolVM>
 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/dist/library.min.css" rel="stylesheet" />
+    <link href="~/Content/js/highlight/styles/monokai.css" rel="stylesheet" />
+    <link href="~/Content/src/black-tie/css/black-tie.min.css" rel="stylesheet" />
+    <link href="~/Content/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .auto-style1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .auto-style2 {
+            text-align: center;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .auto-style3 {
+            text-align: center;
+            color: #fff;
+            text-decoration: none !important;
+        }
+
+        body {
+            background-image: url(../../Images/bridge.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "School Details";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>School</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SchoolName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SchoolName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zip)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zip)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MainPhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MainPhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NumberOfStudents)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NumberOfStudents)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SchoolOrDistrict)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SchoolOrDistrict)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<body>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-4">
+            <br />
+            <br />
+            <br />
+            <div class="container container--medium">
+                <h1 class="auto-style2" style="text-shadow: 2px 2px #000000;">@Html.DisplayFor(model => model.First().SchoolName)</h1>
+                <div class="aligner-center-horitzontal aligner-center-vertical">
+                    <a href="@Html.DisplayFor(model => model.First().Website)" target="_blank">
+                        @{
+                            string imageLink = "http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png";
+                            if (!(string.IsNullOrEmpty(Model.First().ImageLink)))
+                            {
+                                imageLink = Model.First().ImageLink;
+                            }
+                        }
+                        <div class="aligner-center-horitzontal aligner-center-vertical">
+                            <img src="@imageLink" class="rounded-corners" style="max-width: 600px; max-height: 600px;" />
+                        </div>
+                    </a>
+                </div>
+                <br />
+                <h4 class="auto-style1" style="text-shadow: 2px 2px #000000;">@Html.DisplayFor(model => model.First().Address)</h4>
+                <h4 class="auto-style1" style="text-shadow: 2px 2px #000000;">
+                    @Html.DisplayFor(model => model.First().City),
+                    @Html.DisplayFor(model => model.First().State)
+                    @Html.DisplayFor(model => model.First().Zip)
+                </h4>
+                <h4 class="auto-style1" style="text-shadow: 2px 2px #000000;">@Html.DisplayFor(model => model.First().MainPhone)</h4>
+                <p class="auto-style3" style="text-shadow: 2px 2px #000000;"><b>@Html.ActionLink("Edit", "Edit", new { id = @Html.DisplayFor(model => model.First().ID) }, new { @class = "auto-style3" }) | @Html.ActionLink("Change Picture", "ChangePicture", new { SchoolID = @Html.DisplayFor(model => model.First().ID) }, new { @class = "auto-style3" })</b></p>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <br />
+            <br />
+            <br />
+            <table class="container container--medium">
+                <tr>
+                    <td align="right"><h3>Number of Students: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().NumberOfStudents)</h3></td>
+                </tr>
+            </table>
+            <br />
+            <table class="container container--medium">
+                <tr>
+                    <td align="right"><h3>Title: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().ContactTitle)</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><h3>First Name: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().ContactFirstName)</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><h3>Last Name: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().ContactLastName)</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><h3>Email: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().ContactEmail)</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><h3>Phone: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().ContactPhone)</h3></td>
+                </tr>
+                <tr>
+                    <td align="right"><h3>Coordinator: </h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><h3>@Html.DisplayFor(model => model.First().Coordinator)</h3></td>
+                </tr>
+            </table>
+            <table class="container container--medium">
+                <tr>
+                    <td>
+                        <p style="text-shadow: 2px 2px #000000;"><b>@Html.ActionLink("Change Contact Information", "Change", "Schools", new { id = @Html.DisplayFor(model => model.First().ID) }, new { @class = "auto-style3" })</b></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+</body>
+</html>

@@ -27,7 +27,7 @@ namespace SchoolTracker.Models
 
         public System.Data.Entity.DbSet<SchoolTracker.Models.Contact> Contacts { get; set; }
 
-        public System.Data.Entity.DbSet<SchoolTracker.Models.ExtraActivites> ExtraActivites { get; set; }
+        public System.Data.Entity.DbSet<SchoolTracker.Models.ExtraActivities> ExtraActivities { get; set; }
 
         public System.Data.Entity.DbSet<SchoolTracker.Models.Material> Materials { get; set; }
 
@@ -42,5 +42,13 @@ namespace SchoolTracker.Models
         public System.Data.Entity.DbSet<SchoolTracker.Models.RAANNotification> RAANNotifications { get; set; }
 
         public System.Data.Entity.DbSet<SchoolTracker.Models.School> Schools { get; set; }
+
+        public System.Data.Entity.DbSet<SchoolTracker.ViewModel.SchoolVM> SchoolVMs { get; set; }
+
+        public System.Data.Entity.DbSet<SchoolTracker.Models.County> Counties { get; set; }
+
+        public System.Data.Entity.DbSet<SchoolTracker.Models.SchoolDistrict> SchoolDistricts { get; set; }
+
+        public System.Data.Entity.DbSet<SchoolTracker.Models.Staff> Staffs { get; set; }
     }
 }

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SchoolTracker.Models.SchoolDistrict>
+
+<head>
+    <style>
+        body {
+            background-image: url(https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+@{
+    ViewBag.Title = ViewBag.SelectedCounty.CountyName + " County School Districts";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-4">
+        <div class="aligner-center-horitzontal aligner-center-vertical">
+            <h1>@ViewBag.SelectedCounty.CountyName County List of School Districts</h1>
+        </div>
+        <br />
+        @{
+            string imageLink = "http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png";
+            if (!(string.IsNullOrEmpty(ViewBag.SelectedCounty.ImageLink)))
+            {
+                imageLink = ViewBag.SelectedCounty.ImageLink;
+            }
+        }
+        <div class="aligner-center-horitzontal aligner-center-vertical">
+            <img src="@imageLink" style="max-width: 350px; max-height: 350px;" />
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="aligner-center-horitzontal aligner-center-vertical">
+            <p>@Html.ActionLink("Add New School District", "Create", "SchoolDistricts", new { countyId = (object)ViewBag.SelectedCounty.ID }, null)</p>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <table class="table table-responsive table-break-medium">
+            <tr class="text-small">
+                <th>School</th>
+                <th>Full Address</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Students</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(item.SchoolName, "Index", "SchoolDistricts", new { districtId = item.ID }, new { style = "text-decoration: none !important" })</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)<br />
+                        @Html.DisplayFor(modelItem => item.City),
+                        @Html.DisplayFor(modelItem => item.State)
+                        @Html.DisplayFor(modelItem => item.Zip)
+                    </td>
+                    @{ string Phone = String.Format("{0:(###) ###-####}", double.Parse(item.MainPhone)); }
+                    <td>@Html.DisplayFor(modelItem => Phone)</td>
+                    <td>
+                        @{
+                            if (!(String.IsNullOrEmpty(item.Website)))
+                            {
+                                <a class="button button--primary block-mobile" href="@Html.DisplayFor(modelItem => item.Website)" target="_blank">
+                                    <span>Website Link</span>
+                                    <i class="btb bt-external-link bt-sm"></i>
+                                </a>
+                            }
+                        }
+                    </td>
+                    <td align="center">@Html.DisplayFor(modelItem => item.NumberOfStudents)</td>
+                </tr>
+                        }
+        </table>
+    </div>
+    <div class="col-xs-1"></div>
+</div>

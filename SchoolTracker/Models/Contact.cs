@@ -18,5 +18,7 @@ namespace SchoolTracker.Models
         public string ContactPhone { get; set; }
         public string ContactEmail { get; set; }
         public bool PrimaryOrSecondary { get; set; }
+        public bool Coordinator { get; set; }
+        public string ImageLink { get; set; }
     }
 }

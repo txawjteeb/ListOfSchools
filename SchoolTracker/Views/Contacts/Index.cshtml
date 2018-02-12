@@ -1,63 +1,63 @@
-﻿@model IEnumerable<SchoolTracker.Models.Contact>
+﻿@model SchoolTracker.Models.Contact
+
+<head>
+    <style>
+        body {
+            background-image: url(https://static.pexels.com/photos/301943/pexels-photo-301943.jpeg);
+            background-size: cover;
+        }
+    </style>
+</head>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "CONTACT List";
+    string FullName;
+    if (@Model == null)
+    {
+        ViewBag.SelectedContact = "";
+        FullName = "";
+    }
+    else
+    {
+        ViewBag.SelectedContact = Model;
+        FullName = ViewBag.SelectedContact.ContactFirstName + " " +ViewBag.SelectedContact.ContactLastName;
+    }
 }
 
-<h2>Index</h2>
+<br />
+<br />
+<div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-4">
+        <div class="aligner-center-horitzontal aligner-center-vertical">
+            <h2>@FullName</h2>
+        </div>
+        <br />
+        <img class="rounded-corners" src="http://kern.org/wp-files/wwwstatic/webteam/identity/KCSOSRasterLogos/LGO_KCSOS_H_rgb.jpg" />
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="col-xs-6">
+        <table class="table table-responsive table-break-medium">
+            <tr class="text-small">
+                <th>Name</th>
+                <th>Title</th>
+                <th>Phone</th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactFirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactLastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactPhone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrimaryOrSecondary)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactLastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactPhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrimaryOrSecondary)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
+            @foreach (var item in ViewBag.ContactList)
+            {
+                <tr>
+                    <td>@Html.ActionLink((string)item.ContactFirstName + " " + (string)item.ContactLastName, "Index", new { contactId = item.ID })</td>
+                    <td>@item.ContactTitle</td>
+                    @{ 
+                        string lalaland = String.Format("{0:(###) ###-####}", double.Parse(item.ContactPhone));
+                    }
+                    <td>@lalaland</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-xs-1"></div>
+</div>

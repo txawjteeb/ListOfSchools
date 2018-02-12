@@ -1,0 +1,114 @@
+﻿@model IEnumerable<SchoolTracker.ViewModel.SchoolVM>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/dist/library.min.css" rel="stylesheet" />
+    <link href="~/Content/js/highlight/styles/monokai.css" rel="stylesheet" />
+    <link href="~/Content/src/black-tie/css/black-tie.min.css" rel="stylesheet" />
+    <link href="~/Content/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .auto-style1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .auto-style2 {
+            text-align: center;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .auto-style3 {
+            text-align: center;
+            color: #fff;
+            text-decoration: none !important;
+        }
+
+        body {
+            background-image: url(../../Images/bridge.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+@{
+    ViewBag.Title = "School Details";
+}
+<body>
+    <div class="container">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div  class="container container--medium">
+            <h1 class="auto-style2">@Html.DisplayFor(model => model.First().SchoolName)</h1>
+            <h4 class="auto-style1">@Html.DisplayFor(model => model.First().Address)</h4>
+            <h4 class="auto-style1">
+                @Html.DisplayFor(model => model.First().City),
+                @Html.DisplayFor(model => model.First().State)
+                @Html.DisplayFor(model => model.First().Zip)
+            </h4>
+            <p class="auto-style3">@Html.ActionLink("Edit", "Edit", new { id = @Html.DisplayFor(model => model.First().ID) }, new { @class = "auto-style3" }) | @Html.ActionLink("Back to List", "Index", new { countyId = @Html.DisplayFor(model => model.First().CountyID) }, new { @class = "auto-style3" })</p>
+            <p class="page-header"></p>
+        </div>
+        <table class="container container--medium">
+            <tr>
+                <td align="right"><h4>Main Phone: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().MainPhone)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>Website: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4><a href="@Html.DisplayFor(model => model.First().Website)" target="_blank">@Html.DisplayFor(model => model.First().Website)</a></h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>Number of Students: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().NumberOfStudents)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>School or District: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().SchoolOrDistrict)</h4></td>
+            </tr>
+        </table>
+        <br />
+        <table class="container container--medium">
+            <tr>
+                <td align="right"><h4>Title: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().ContactTitle)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>First Name: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().ContactFirstName)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>Last Name: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().ContactLastName)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>Email: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().ContactEmail)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>Phone: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().ContactPhone)</h4></td>
+            </tr>
+            <tr>
+                <td align="right"><h4>Coordinator?: </h4></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h4>@Html.DisplayFor(model => model.First().Coordinator)</h4></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

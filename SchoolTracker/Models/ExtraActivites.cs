@@ -8,7 +8,7 @@ using System.Web;
 namespace SchoolTracker.Models
 {
     [Table("ExtraActivites")]
-    public class ExtraActivites
+    public class ExtraActivities
     {
         [Key]
         public int ID { get; set; }

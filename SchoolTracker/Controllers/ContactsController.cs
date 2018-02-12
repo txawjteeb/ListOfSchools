@@ -15,14 +15,18 @@ namespace SchoolTracker.Controllers
         private SchoolTrackerContext db = new SchoolTrackerContext();
 
         // GET: Contacts
-        public ActionResult Index()
+        public ActionResult Index(int? contactId)
         {
-            return View(db.Contacts.ToList());
+            PopulatePartialView();
+            ViewBag.ContactList = db.Contacts.ToList();
+            Contact selectedContact = contactId == null ? null : db.Contacts.Find(contactId);
+            return View(selectedContact);
         }
 
         // GET: Contacts/Details/5
         public ActionResult Details(int? id)
         {
+            PopulatePartialView();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,6 +42,7 @@ namespace SchoolTracker.Controllers
         // GET: Contacts/Create
         public ActionResult Create()
         {
+            PopulatePartialView();
             return View();
         }
 
@@ -48,6 +53,7 @@ namespace SchoolTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,ContactFirstName,ContactLastName,ContactTitle,ContactPhone,ContactEmail,PrimaryOrSecondary")] Contact contact)
         {
+            PopulatePartialView();
             if (ModelState.IsValid)
             {
                 db.Contacts.Add(contact);
@@ -61,6 +67,7 @@ namespace SchoolTracker.Controllers
         // GET: Contacts/Edit/5
         public ActionResult Edit(int? id)
         {
+            PopulatePartialView();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -80,6 +87,7 @@ namespace SchoolTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,ContactFirstName,ContactLastName,ContactTitle,ContactPhone,ContactEmail,PrimaryOrSecondary")] Contact contact)
         {
+            PopulatePartialView();
             if (ModelState.IsValid)
             {
                 db.Entry(contact).State = EntityState.Modified;
@@ -92,6 +100,7 @@ namespace SchoolTracker.Controllers
         // GET: Contacts/Delete/5
         public ActionResult Delete(int? id)
         {
+            PopulatePartialView();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -109,12 +118,19 @@ namespace SchoolTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            PopulatePartialView();
             Contact contact = db.Contacts.Find(id);
             db.Contacts.Remove(contact);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        public void PopulatePartialView()
+        {
+            ViewBag.SchoolList = db.Schools.ToList();
+            ViewBag.SchoolDistrictList = db.SchoolDistricts.ToList();
+            ViewBag.CountyList = db.Counties.ToList();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

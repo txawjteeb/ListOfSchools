@@ -17,7 +17,7 @@ namespace SchoolTracker.Controllers
         // GET: ExtraActivites
         public ActionResult Index()
         {
-            return View(db.ExtraActivites.ToList());
+            return View(db.ExtraActivities.ToList());
         }
 
         // GET: ExtraActivites/Details/5
@@ -27,7 +27,7 @@ namespace SchoolTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ExtraActivites extraActivites = db.ExtraActivites.Find(id);
+            ExtraActivities extraActivites = db.ExtraActivities.Find(id);
             if (extraActivites == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace SchoolTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,CalendarProgram,VideoContest,SportsOutreach,Workshops,ScienceDays")] ExtraActivites extraActivites)
+        public ActionResult Create([Bind(Include = "ID,CalendarProgram,VideoContest,SportsOutreach,Workshops,ScienceDays")] ExtraActivities extraActivites)
         {
             if (ModelState.IsValid)
             {
-                db.ExtraActivites.Add(extraActivites);
+                db.ExtraActivities.Add(extraActivites);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace SchoolTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ExtraActivites extraActivites = db.ExtraActivites.Find(id);
+            ExtraActivities extraActivites = db.ExtraActivities.Find(id);
             if (extraActivites == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace SchoolTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,CalendarProgram,VideoContest,SportsOutreach,Workshops,ScienceDays")] ExtraActivites extraActivites)
+        public ActionResult Edit([Bind(Include = "ID,CalendarProgram,VideoContest,SportsOutreach,Workshops,ScienceDays")] ExtraActivities extraActivites)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace SchoolTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ExtraActivites extraActivites = db.ExtraActivites.Find(id);
+            ExtraActivities extraActivites = db.ExtraActivities.Find(id);
             if (extraActivites == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace SchoolTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ExtraActivites extraActivites = db.ExtraActivites.Find(id);
-            db.ExtraActivites.Remove(extraActivites);
+            ExtraActivities extraActivites = db.ExtraActivities.Find(id);
+            db.ExtraActivities.Remove(extraActivites);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

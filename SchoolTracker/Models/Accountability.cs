@@ -11,13 +11,15 @@ namespace SchoolTracker.Models
     public class Accountability
     {
         [Key]
-        public int ID{ get; set; }
+        public int ID { get; set; }
         public string OCStaffAssigned { get; set; }
         public DateTime DateOfContact { get; set; }
         public string StaffLastContacted { get; set; }
         public int NoteID { get; set; }
         public bool ReadActiveOrNot { get; set; }
         public bool IdleSignOrNot { get; set; }
+        public int SchoolID { get; set; }
+        
 
     }
 }

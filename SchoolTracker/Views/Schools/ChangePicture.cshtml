@@ -1,0 +1,28 @@
+﻿@model SchoolTracker.Models.School
+
+@{
+    ViewBag.Title = "Change Image";
+}
+
+<h2>Upload Image</h2>  
+
+@using (Html.BeginForm("UploadImage", "Schools", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" value="Upload" />
+        <input type="hidden" value="@Model.ID" name="SchoolID" id="SchoolID" />
+        <input type="hidden" value="@Model.ImageLink" name="SchoolImageLink" id="SchoolImageLink" />
+        @ViewBag.Message
+    </div>
+}
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Details", new { id = Model.ID })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

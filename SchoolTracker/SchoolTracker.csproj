@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -158,13 +159,89 @@
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\ParentsCommunicationsController.cs" />
     <Compile Include="Controllers\RAANNotificationsController.cs" />
+    <Compile Include="Controllers\CountiesController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
+    <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountabilitiesController.cs" />
+    <Compile Include="Migrations\201708012332290_InitialCreate.cs" />
+    <Compile Include="Migrations\201708012332290_InitialCreate.Designer.cs">
+      <DependentUpon>201708012332290_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709072304462_SchoolTrackerContext.cs" />
+    <Compile Include="Migrations\201709072304462_SchoolTrackerContext.Designer.cs">
+      <DependentUpon>201709072304462_SchoolTrackerContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191738468_SchoolTrackerContext1.cs" />
+    <Compile Include="Migrations\201709191738468_SchoolTrackerContext1.Designer.cs">
+      <DependentUpon>201709191738468_SchoolTrackerContext1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709212345046_SchoolVM.cs" />
+    <Compile Include="Migrations\201709212345046_SchoolVM.Designer.cs">
+      <DependentUpon>201709212345046_SchoolVM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709262314225_SchoolVM1.cs" />
+    <Compile Include="Migrations\201709262314225_SchoolVM1.Designer.cs">
+      <DependentUpon>201709262314225_SchoolVM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709271501493_County.cs" />
+    <Compile Include="Migrations\201709271501493_County.Designer.cs">
+      <DependentUpon>201709271501493_County.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709272322544_SchoolDistrict.cs" />
+    <Compile Include="Migrations\201709272322544_SchoolDistrict.Designer.cs">
+      <DependentUpon>201709272322544_SchoolDistrict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709281856376_SchoolVMChanges.cs" />
+    <Compile Include="Migrations\201709281856376_SchoolVMChanges.Designer.cs">
+      <DependentUpon>201709281856376_SchoolVMChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041831452_ContactsAddID.cs" />
+    <Compile Include="Migrations\201710041831452_ContactsAddID.Designer.cs">
+      <DependentUpon>201710041831452_ContactsAddID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710112147568_ContactIDAdded.cs" />
+    <Compile Include="Migrations\201710112147568_ContactIDAdded.Designer.cs">
+      <DependentUpon>201710112147568_ContactIDAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172335092_AddingImageLink.cs" />
+    <Compile Include="Migrations\201710172335092_AddingImageLink.Designer.cs">
+      <DependentUpon>201710172335092_AddingImageLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710182138502_AddedImageLinkToViewModel.cs" />
+    <Compile Include="Migrations\201710182138502_AddedImageLinkToViewModel.Designer.cs">
+      <DependentUpon>201710182138502_AddedImageLinkToViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710202154264_TestingHowMigrationWorksDemo.cs" />
+    <Compile Include="Migrations\201710202154264_TestingHowMigrationWorksDemo.Designer.cs">
+      <DependentUpon>201710202154264_TestingHowMigrationWorksDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710202220303_Added Staff Model.cs" />
+    <Compile Include="Migrations\201710202220303_Added Staff Model.Designer.cs">
+      <DependentUpon>201710202220303_Added Staff Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710202251306_MakeEmployeeIDPrimaryKey.cs" />
+    <Compile Include="Migrations\201710202251306_MakeEmployeeIDPrimaryKey.Designer.cs">
+      <DependentUpon>201710202251306_MakeEmployeeIDPrimaryKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710202253292_ChangeEmployeeIDToRecordID.cs" />
+    <Compile Include="Migrations\201710202253292_ChangeEmployeeIDToRecordID.Designer.cs">
+      <DependentUpon>201710202253292_ChangeEmployeeIDToRecordID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710202257479_AddEmployeeID.cs" />
+    <Compile Include="Migrations\201710202257479_AddEmployeeID.Designer.cs">
+      <DependentUpon>201710202257479_AddEmployeeID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710202328144_AddSchoolIDToAccountabilityModel.cs" />
+    <Compile Include="Migrations\201710202328144_AddSchoolIDToAccountabilityModel.Designer.cs">
+      <DependentUpon>201710202328144_AddSchoolIDToAccountabilityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CommunicationTool.cs" />
     <Compile Include="Models\CleanAirChampion.cs" />
+    <Compile Include="Models\County.cs" />
     <Compile Include="Models\ExtraActivites.cs" />
     <Compile Include="Models\ParentsCommunication.cs" />
     <Compile Include="Models\Note.cs" />
@@ -174,11 +251,20 @@
     <Compile Include="Models\RAANNotification.cs" />
     <Compile Include="Models\Accountability.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\SchoolDistrict.cs" />
     <Compile Include="Models\School.cs" />
+    <Compile Include="Controllers\SchoolDistrictsController.cs" />
     <Compile Include="Models\SchoolTrackerContext.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AccountabilityStaffVM.cs" />
+    <Compile Include="ViewModel\SchoolVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SchoolTrackerContext-20170801161349.mdf" />
+    <Content Include="App_Data\SchoolTrackerContext-20170801161349_log.ldf">
+      <DependentUpon>SchoolTrackerContext-20170801161349.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\dist\library.min.css" />
     <Content Include="Content\dist\library.native.min.css" />
     <Content Include="Content\js\demo.js" />
@@ -641,6 +727,7 @@
     <Content Include="Content\js\showdown\src\subParsers\stripLinkDefinitions.js" />
     <Content Include="Content\js\showdown\src\subParsers\tables.js" />
     <Content Include="Content\js\showdown\src\subParsers\unescapeSpecialChars.js" />
+    <Content Include="Content\default.css" />
     <Content Include="Content\src\black-tie\css\black-tie.css" />
     <Content Include="Content\src\black-tie\css\black-tie.min.css" />
     <Content Include="Content\src\black-tie\documentation\all.html" />
@@ -895,6 +982,36 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Errors\css\base.css" />
+    <Content Include="Views\Errors\css\demo.css" />
+    <Content Include="Views\Errors\css\font-awesome\css\font-awesome.css" />
+    <Content Include="Views\Errors\css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Views\Errors\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Views\Errors\css\fonts.css" />
+    <Content Include="Views\Errors\css\main.css" />
+    <Content Include="Views\Errors\css\vendor.css" />
+    <Content Include="Views\Errors\error404.html" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-black-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-blackitalic-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bold-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bolditalic-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-italic-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-light-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-lightitalic-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-medium-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-mediumitalic-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-regular-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thin-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thinitalic-webfont.svg" />
+    <Content Include="Views\Errors\fonts\roboto\stylesheet.css" />
+    <Content Include="Views\Errors\images\main-logo.png" />
+    <Content Include="Views\Errors\images\slides\dandelion.jpg" />
+    <Content Include="Views\Errors\images\slides\greens.jpg" />
+    <Content Include="Views\Errors\images\slides\woods.jpg" />
+    <Content Include="Views\Errors\js\jquery-2.1.3.min.js" />
+    <Content Include="Views\Errors\js\main.js" />
+    <Content Include="Views\Errors\js\modernizr.js" />
+    <Content Include="Views\Errors\js\plugins.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -968,10 +1085,81 @@
     <Content Include="Views\Schools\Delete.cshtml" />
     <Content Include="Views\Schools\Details.cshtml" />
     <Content Include="Views\Schools\Edit.cshtml" />
-    <Content Include="Views\Schools\Index.cshtml" />
+    <Content Include="Views\Errors\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Views\Errors\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Views\Errors\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Views\Errors\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-black-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-black-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-black-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-black-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-blackitalic-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-blackitalic-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-blackitalic-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-blackitalic-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bold-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bold-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bold-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bold-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bolditalic-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bolditalic-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bolditalic-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-bolditalic-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-italic-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-italic-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-italic-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-italic-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-light-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-light-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-light-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-light-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-lightitalic-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-lightitalic-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-lightitalic-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-lightitalic-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-medium-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-medium-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-medium-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-medium-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-mediumitalic-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-mediumitalic-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-mediumitalic-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-mediumitalic-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-regular-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-regular-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-regular-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-regular-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thin-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thin-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thin-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thin-webfont.woff2" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thinitalic-webfont.eot" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thinitalic-webfont.ttf" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thinitalic-webfont.woff" />
+    <Content Include="Views\Errors\fonts\roboto\roboto-thinitalic-webfont.woff2" />
+    <Content Include="Views\SchoolDistricts\Create.cshtml" />
+    <Content Include="Views\SchoolDistricts\Delete.cshtml" />
+    <Content Include="Views\SchoolDistricts\Details.cshtml" />
+    <Content Include="Views\SchoolDistricts\Edit.cshtml" />
+    <Content Include="Views\SchoolDistricts\Index.cshtml" />
+    <Content Include="Views\Counties\Create.cshtml" />
+    <Content Include="Views\Counties\Delete.cshtml" />
+    <Content Include="Views\Counties\Details.cshtml" />
+    <Content Include="Views\Counties\Edit.cshtml" />
+    <Content Include="Views\Counties\Index.cshtml" />
+    <Content Include="Views\Schools\Change.cshtml" />
+    <Content Include="Views\Schools\ChangePicture.cshtml" />
+    <Content Include="Views\Staffs\Create.cshtml" />
+    <Content Include="Views\Staffs\Delete.cshtml" />
+    <Content Include="Views\Staffs\Details.cshtml" />
+    <Content Include="Views\Staffs\Edit.cshtml" />
+    <Content Include="Views\Staffs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Images\Contact\" />
+    <Folder Include="Images\County\" />
+    <Folder Include="Images\SchoolDistrict\" />
+    <Folder Include="Images\School\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -987,6 +1175,62 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708012332290_InitialCreate.resx">
+      <DependentUpon>201708012332290_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709072304462_SchoolTrackerContext.resx">
+      <DependentUpon>201709072304462_SchoolTrackerContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191738468_SchoolTrackerContext1.resx">
+      <DependentUpon>201709191738468_SchoolTrackerContext1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709212345046_SchoolVM.resx">
+      <DependentUpon>201709212345046_SchoolVM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709262314225_SchoolVM1.resx">
+      <DependentUpon>201709262314225_SchoolVM1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709271501493_County.resx">
+      <DependentUpon>201709271501493_County.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709272322544_SchoolDistrict.resx">
+      <DependentUpon>201709272322544_SchoolDistrict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709281856376_SchoolVMChanges.resx">
+      <DependentUpon>201709281856376_SchoolVMChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041831452_ContactsAddID.resx">
+      <DependentUpon>201710041831452_ContactsAddID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710112147568_ContactIDAdded.resx">
+      <DependentUpon>201710112147568_ContactIDAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172335092_AddingImageLink.resx">
+      <DependentUpon>201710172335092_AddingImageLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710182138502_AddedImageLinkToViewModel.resx">
+      <DependentUpon>201710182138502_AddedImageLinkToViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710202154264_TestingHowMigrationWorksDemo.resx">
+      <DependentUpon>201710202154264_TestingHowMigrationWorksDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710202220303_Added Staff Model.resx">
+      <DependentUpon>201710202220303_Added Staff Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710202251306_MakeEmployeeIDPrimaryKey.resx">
+      <DependentUpon>201710202251306_MakeEmployeeIDPrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710202253292_ChangeEmployeeIDToRecordID.resx">
+      <DependentUpon>201710202253292_ChangeEmployeeIDToRecordID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710202257479_AddEmployeeID.resx">
+      <DependentUpon>201710202257479_AddEmployeeID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710202328144_AddSchoolIDToAccountabilityModel.resx">
+      <DependentUpon>201710202328144_AddSchoolIDToAccountabilityModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

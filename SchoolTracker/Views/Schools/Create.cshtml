@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Schools CREATE</h2>
 
 
 @using (Html.BeginForm()) 
@@ -80,12 +80,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SchoolOrDistrict, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DistrictID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.SchoolOrDistrict)
-                    @Html.ValidationMessageFor(model => model.SchoolOrDistrict, "", new { @class = "text-danger" })
-                </div>
+                @Html.HiddenFor(model => model.DistrictID, new { @Value = (int)@ViewBag.SelectedDistrict.ID, disabled = "disabled" })
             </div>
         </div>
 
@@ -98,7 +95,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "SchoolDistricts", new { districtId = (object)@ViewBag.SelectedDistrict.ID }, null)
 </div>
 
 @section Scripts {
